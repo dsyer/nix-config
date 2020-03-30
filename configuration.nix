@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
 
-  imports = [ ./base.nix ];
+  imports = [ ./nix/base.nix ];
 
   services.openssh = {
     enable = true;

@@ -13,6 +13,17 @@ $ make clean all
 
 Then you are ready to start.
 
+## Hacking and Updating NixOS
+
+The workflow is
+
+1. Generate an image (see below)
+2. Get it running in a VM
+3. Sync the NixOS config files (`./scripts/bootstrap.sh <remote-host>`)
+4. SSH into the VM
+5. Hack `~/nixos-config` on the remote
+6. Rebuild with `sudo nixos-rebuild switch`
+
 ## Generating Images
 
 Choose an image format to iterate on. You can use the source code to generate any of these at any time, so choose whatever is most convenient or familiar. [NixOS Generators](https://github.com/nix-community/nixos-generators) supports a range of image formats. Here are some examples.
@@ -56,16 +67,33 @@ You have to leave out the SSH configuration `configuration.nix`. So there's a sp
 $ nix-shell -p nixos-generators
 $ GCP_PROJECT=$(gcloud config list core/project --format='value(core.project)')
 $ DISK=$(nixos-generate -f gce -c gce.nix)
-$ gsutil cp $DISK  gs://${GCP_PROJECT}_cloudbuild/nixos-gen.raw.tar.gz
+$ gsutil cp $DISK  gs://${GCP_PROJECT}_cloudbuild/nixos.raw.tar.gz
 ```
 
 Create an image:
 
 ```
-$ gcloud compute images create nixgen --source-uri gs://${GCP_PROJECT}_cloudbuild/nixos-gen.raw.tar.gz
+$ gcloud compute images create nixos --source-uri gs://${GCP_PROJECT}_cloudbuild/nixos.raw.tar.gz
 ```
 
-Use that to create a VM instance and you can ssh into it directly (provided you use the right private key).
+List images:
+
+```
+$ gcloud compute images list --project $GCP_PROJECT --no-standard-images
+NAME    PROJECT           FAMILY  DEPRECATED  STATUS
+nixos   cf-sandbox-dsyer                      READY
+```
+
+Use the image to create a VM instance and from there ssh into it directly (provided you use the right private key).
+
+```
+$ gcloud compute instances create nixos --image-project $GCP_PROJECT --image nixos
+Created [https://www.googleapis.com/compute/v1/projects/cf-sandbox-dsyer/zones/us-east1-d/instances/nixos].
+NAME   ZONE        MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
+nixos  us-east1-d  n1-standard-1               10.142.0.15  35.190.138.69  RUNNING
+$ ssh 35.190.138.69
+[dsyer@nixos:~]$ 
+```
 
 ### LXC
 

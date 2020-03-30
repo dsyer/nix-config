@@ -23,7 +23,7 @@ Create a disk and make it writable
 
 ```
 $ nix-shell -p nixos-generators
-$ DISK=$(nixos-generate -f qcow -c configuration.nix)
+$ DISK=$(nixos-generate -f qcow -c qemu.nix)
 $ cp $DISK disk.qcow
 $ chmod +w disk.qcow
 ```
@@ -31,7 +31,7 @@ $ chmod +w disk.qcow
 Boot it in Qemu:
 
 ```
-$ qemu-system-x86_64 -hda disk.qcow -boot d -net nic -net user,hostfwd=tcp::2222-:22 -localtime
+$ qemu-system-x86_64 --enable-kvm -hda disk.qcow -boot d -net nic -net user,hostfwd=tcp::2222-:22 -localtime
 ```
 
 Use localhost IP address (not loopback) to log in:
@@ -41,7 +41,7 @@ $ HOST=`hostname -I | tr ' ' '\n' | grep 192`
 $ ssh $HOST -p 2222
 ```
 
-You will need to increase the size of the disk before you do any hacking on it:
+You will need more memory, or some swap, if you want to hack on it. You might also need to increase the size of the disk:
 
 ```
 $ qemu resize disk.qcow +8G
@@ -50,19 +50,19 @@ Image resized.
 
 ### Google
 
-You have to leave out the SSH configuration `configuration.nix`. So there's a special config file (`gce.nix`). Copy it to Google Storage:
+You have to leave out the SSH configuration `configuration.nix`. So there's a special config file (`gce.nix`). Copy it to Google Storage (assuming there is already a bucket called `${GCP_PROJECT}_cloudbuild`):
 
 ```
 $ nix-shell -p nixos-generators
 $ GCP_PROJECT=$(gcloud config list core/project --format='value(core.project)')
 $ DISK=$(nixos-generate -f gce -c gce.nix)
-$ gsutil cp $DISK  gs://cf-sandbox-dsyer_cloudbuild/nixos-gen.raw.tar.gz
+$ gsutil cp $DISK  gs://${GCP_PROJECT}_cloudbuild/nixos-gen.raw.tar.gz
 ```
 
 Create an image:
 
 ```
-$ gcloud compute images create nixgen --source-uri gs://cf-sandbox-dsyer_cloudbuild/nixos-gen.raw.tar.gz
+$ gcloud compute images create nixgen --source-uri gs://${GCP_PROJECT}_cloudbuild/nixos-gen.raw.tar.gz
 ```
 
 Use that to create a VM instance and you can ssh into it directly (provided you use the right private key).
@@ -81,7 +81,7 @@ Then you can generate and import an image:
 
 ```
 $ nix-shell -p nixos-generators
-$ lxc image import --alias nixos $(nixos-generate -f lxc-metadata) $(nixos-generate -f lxc -c configuration.nix)
+$ lxc image import --alias nixos $(nixos-generate -f lxc-metadata) $(nixos-generate -f lxc -c lxc.nix)
 $ lxc launch nixos nixos
 ```
 

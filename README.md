@@ -3,9 +3,11 @@
 
 Configuration files for [NixOS](https://nixos.org). Create a VM or bootable disk image declaratively and reproducibly.
 
+> NOTE: NixOS doesn't work with VSCode remote extension[[ref](https://github.com/microsoft/vscode-remote-release/issues/103)]. Bummer.
+
 ## Bootstrap
 
-There is a template for a user account in `templates`. Use it to build a `users.nix` that contains your user ID and public key:
+We want to be able to log into the VM when it comes up, so we need to add a user account. To do this we use a template that creates a user account the same as the current user, and assuming you have a public key in your `~/.ssh`. Use the template to build a `users.nix` that contains your user ID and public key:
 
 ```
 $ make clean all
@@ -23,10 +25,14 @@ The workflow is
 4. SSH into the VM
 5. Hack `~/nixos-config` on the remote
 6. Rebuild with `sudo nixos-rebuild switch`
+7. Commit changes and push
+8. GOTO 5.
+
+To enable step 6 to work you need to be able to push to github, so the `bootstrap.sh` script copies your _private_ key into the remote. You obviously don't want to share that with anyone, but it's safe because only you can log in (the user account doesn't have a password and root login is disabled).
 
 ## Generating Images
 
-Choose an image format to iterate on. You can use the source code to generate any of these at any time, so choose whatever is most convenient or familiar. [NixOS Generators](https://github.com/nix-community/nixos-generators) supports a range of image formats. Here are some examples.
+Choose an image format (e.g. Qemu or Google). You can use the source code to generate any of these at any time, so choose whatever is most convenient or familiar. [NixOS Generators](https://github.com/nix-community/nixos-generators) supports a range of image formats. Here are some examples.
 
 ### Qemu
 

@@ -6,8 +6,10 @@ environment.systemPackages = with pkgs; [
   nodejs-12_x
 ];
 
-system.activationScripts.linkNode = ''
-  ln -nfs /run/current-system/sw/bin/node /home/*/.vscode-server/bin/*/
+environment.loginShellInit = ''
+  if [ -f $HOME/.vscode-server/bin/*/node ]; then
+    ln -nfs /run/current-system/sw/bin/node $HOME/.vscode-server/bin/*/;
+  fi
 '';
 
 }

@@ -4,7 +4,10 @@
 
 environment.systemPackages = with pkgs; [
   nodejs-12_x
-  vscode-extensions.ms-vscode-remote.remote-ssh
 ];
+
+system.activationScripts.linkNode = ''
+  ln -nfs /run/current-system/sw/bin/node /home/*/.vscode-server/bin/*/
+'';
 
 }

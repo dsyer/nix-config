@@ -3,7 +3,7 @@
 
 Configuration files for [NixOS](https://nixos.org). Create a VM or bootable disk image declaratively and reproducibly.
 
-> NOTE: NixOS doesn't work with VSCode remote extension[[ref](https://github.com/microsoft/vscode-remote-release/issues/103)]. Bummer.
+> NOTE: NixOS doesn't work with VSCode remote extension if you install it manually[[ref](https://github.com/microsoft/vscode-remote-release/issues/103)]. But there's a Nix package for it that works as long as you also have node 12.
 
 ## Bootstrap
 

@@ -1,9 +1,12 @@
 { config, pkgs, ... }: {
 
+  nixpkgs.config.allowUnfree = true;
+
   imports = [
     /etc/nixos/hardware-configuration.nix
     ./nix/base.nix
     ./nix/ssh.nix
+    ./nix/remote.nix
   ];
 
   boot.cleanTmpDir = true;
@@ -16,6 +19,10 @@
     {
       device = "/swapfile";
     }
+  ];
+
+  environment.systemPackages = [
+    pkgs.git
   ];
 
   # This value determines the NixOS release from which the default

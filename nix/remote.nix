@@ -7,9 +7,9 @@ environment.systemPackages = with pkgs; [
 ];
 
 environment.loginShellInit = ''
-  if [ -f $HOME/.vscode-server/bin/*/node ]; then
-    ln -nfs /run/current-system/sw/bin/node $HOME/.vscode-server/bin/*/;
-  fi
+  for f in $HOME/.vscode-server/bin/*; do 
+    ln -nfs /run/current-system/sw/bin/node $f;
+  done
 '';
 
 }

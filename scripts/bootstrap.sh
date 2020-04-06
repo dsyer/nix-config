@@ -14,8 +14,8 @@ ssh $remote test -e ~/.ssh/id_rsa || scp ~/.ssh/id_rsa $remote:~/.ssh
 rsync --filter=':- .gitignore' -a -P . $remote:~/nix-config
 
 ssh -T $remote << EOF
-test -e /swapfile || sudo fallocate -l 1G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile
+test -e /swapfile || (sudo fallocate -l 1G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile)
 test -e /etc/nixos/hardware-configuration.nix || sudo nixos-generate-config
 test -e /etc/nixos/configuration.nix && sudo mv /etc/nixos/configuration.nix /tmp
-sudo ln -s ~/nix-config/configuration.nix /etc/nixos/configuration.nix
+sudo ln -nfs ~/nix-config/configuration.nix /etc/nixos/configuration.nix
 EOF

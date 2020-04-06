@@ -9,11 +9,18 @@
     ./nix/remote.nix
   ];
 
-  boot.cleanTmpDir = true;
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.loader.grub.device = "/dev/sda";
+  boot = {
+    loader = {
+      grub.enable = true;
+      grub.version = 2;
+      grub.device = "/dev/sda";
+    };
+    cleanTmpDir = true;
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernel.sysctl = {
+      "fs.inotify.max_user_watches" = "1048576";
+    };
+  };
 
   swapDevices = [
     {

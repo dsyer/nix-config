@@ -28,7 +28,7 @@ The workflow is
 7. Commit changes and push
 8. GOTO 5.
 
-To enable step 6 to work you need to be able to push to github, so the `bootstrap.sh` script copies your _private_ key into the remote. You obviously don't want to share that with anyone, but it's safe because only you can log in (the user account doesn't have a password and root login is disabled).
+To enable step 7 to work you need to be able to push to github, so the `bootstrap.sh` script copies your _private_ key into the remote. You obviously don't want to share that with anyone, but it's safe because only you can log in (the user account doesn't have a password and root login is disabled).
 
 ## Generating Images
 

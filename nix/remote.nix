@@ -1,9 +1,14 @@
 { config, pkgs, ... }: {
 
 environment.systemPackages = with pkgs; [
+  gitAndTools.hub
   jdk11
   nodejs-12_x
 ];
+
+environment.shellAliases = {
+    git = "hub";
+};
 
 # Make VS Code work with a remote client
 environment.loginShellInit = ''

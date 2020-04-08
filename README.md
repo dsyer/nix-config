@@ -1,4 +1,3 @@
-
 # NixOS Configuration Files
 
 Configuration files for [NixOS](https://nixos.org). Create a VM or bootable disk image declaratively and reproducibly.
@@ -7,7 +6,7 @@ Configuration files for [NixOS](https://nixos.org). Create a VM or bootable disk
 
 ## Bootstrap
 
-We want to be able to log into the VM when it comes up, so we need to add a user account. To do this we use a template that creates a user account the same as the current user, and assuming you have a public key in your `~/.ssh`. Use the template to build a `users.nix` that contains your user ID and public key:
+We want to be able to log into the VM when it comes up, so we need to add a user account. To do this we use a template that creates a user account the same as the current user, and assuming you have a public key in your `~/.ssh`. Use the template to build files that depend on your username etc (edit the `Makefile` to change the settings):
 
 ```
 $ make clean all
@@ -98,7 +97,7 @@ Created [https://www.googleapis.com/compute/v1/projects/cf-sandbox-dsyer/zones/u
 NAME   ZONE        MACHINE_TYPE   PREEMPTIBLE  INTERNAL_IP  EXTERNAL_IP    STATUS
 nixos  us-east1-d  n1-standard-1               10.142.0.15  35.190.138.69  RUNNING
 $ ssh 35.190.138.69
-[dsyer@nixos:~]$ 
+[dsyer@nixos:~]$
 ```
 
 ### LXC

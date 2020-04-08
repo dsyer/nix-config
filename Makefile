@@ -17,4 +17,5 @@ dotfiles/%: templates/dotfiles/%
 
 clean:
 	rm -f nix/users.nix
+	for f in $(shell (cd templates/dotfiles; find . -type f)); do rm -f ~/$$f; done
 	for f in $(shell (cd templates/dotfiles; find . -type f)); do rm -f dotfiles/$$f; done

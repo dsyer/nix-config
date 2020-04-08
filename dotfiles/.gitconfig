@@ -1,3 +1,5 @@
 [user]
-	email = david_syer@hotmail.com
+	email = dsyer@pivotal.io
 	name = Dave Syer
+[core]
+	hooksPath=/home/dsyer/dev/git-hooks-core

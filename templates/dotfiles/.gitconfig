@@ -1,0 +1,5 @@
+[user]
+	email = ${EMAIL}
+	name = ${NAME}
+[core]
+	hooksPath=$HOME/dev/git-hooks-core

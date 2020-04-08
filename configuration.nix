@@ -30,6 +30,7 @@
 
   environment.systemPackages = [
     pkgs.git
+    pkgs.stow
   ];
 
   # This value determines the NixOS release from which the default

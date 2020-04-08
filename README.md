@@ -21,7 +21,7 @@ The workflow is
 1. Generate an image (see below)
 2. Get it running in a VM
 3. Sync the NixOS config files (`./scripts/bootstrap.sh <remote-host>`)
-4. SSH into the VM
+4. SSH into the VM, `cd ~/nixos-config && make`
 5. Hack `~/nixos-config` on the remote
 6. Rebuild with `sudo nixos-rebuild switch`
 7. Commit changes and push
@@ -40,14 +40,13 @@ Create a disk and make it writable
 ```
 $ nix-shell -p nixos-generators
 $ DISK=$(nixos-generate -f qcow -c qemu.nix)
-$ cp $DISK disk.qcow
-$ chmod +w disk.qcow
+$ cp $DISK disk.qcow && chmod +w disk.qcow
 ```
 
 Boot it in Qemu:
 
 ```
-$ qemu-system-x86_64 --enable-kvm -hda disk.qcow -boot d -net nic -net user,hostfwd=tcp::2222-:22 -localtime
+$ qemu-system-x86_64 --enable-kvm -hda disk.qcow -boot d -net nic -net user,hostfwd=tcp::2222-:22 -localtime -m 4096
 ```
 
 Use localhost IP address (not loopback) to log in:

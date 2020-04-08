@@ -9,7 +9,7 @@ remote=$1
 shift
 
 ssh $remote mkdir -m 700 -p .ssh
-ssh $remote test -e ~/.ssh/id_rsa || scp ~/.ssh/id_rsa $remote:~/.ssh
+ssh $remote test -e ~/.ssh/id_rsa || scp ~/.ssh/id_rsa* $remote:~/.ssh
 
 rsync --filter=':- .gitignore' -a -P . $remote:~/nix-config
 

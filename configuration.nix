@@ -28,9 +28,11 @@
     }
   ];
 
-  environment.systemPackages = [
-    pkgs.git
-    pkgs.stow
+  environment.systemPackages = with pkgs [
+    envsubst
+    git
+    gnumake
+    stow
   ];
 
   # This value determines the NixOS release from which the default

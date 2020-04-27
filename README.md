@@ -29,7 +29,7 @@ The workflow is
 
 To enable step 7 to work you need to be able to push to github, so the `bootstrap.sh` script copies your _private_ key into the remote. You obviously don't want to share that with anyone, but it's safe because only you can log in (the user account doesn't have a password and root login is disabled).
 
-## Hacking and Updateing Nix
+## Hacking and Updating Nix
 
 Once you have an image and can SSH into it, the remote user has a `nix-env` that can be used to install and run other tools. A basic starter kit was provided in `.config/nixpkgs/config.nix`, but you can edit that file and update the environment on the remote:
 

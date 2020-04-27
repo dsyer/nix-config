@@ -17,23 +17,12 @@
     };
     cleanTmpDir = true;
     kernelPackages = pkgs.linuxPackages_latest;
-    kernel.sysctl = {
-      "fs.inotify.max_user_watches" = "1048576";
-    };
+    kernel.sysctl = { "fs.inotify.max_user_watches" = "1048576"; };
   };
 
-  swapDevices = [
-    {
-      device = "/swapfile";
-    }
-  ];
+  swapDevices = [{ device = "/swapfile"; }];
 
-  environment.systemPackages = with pkgs [
-    envsubst
-    git
-    gnumake
-    stow
-  ];
+  environment.systemPackages = with pkgs; [ envsubst git gnumake stow ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

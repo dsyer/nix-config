@@ -7,16 +7,12 @@ with (import <nixpkgs> { }); {
         paths = [
           dive
           docker-compose
-          envsubst
-          git
           gitAndTools.hub
-          gnumake
           jq
           kind
           kubectl
           kustomize
           skaffold
-          stow
           yq
         ];
       };

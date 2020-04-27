@@ -24,6 +24,7 @@ test -e /swapfile || (sudo fallocate -l 1G /swapfile && sudo chmod 600 /swapfile
 test -e /etc/nixos/hardware-configuration.nix || sudo nixos-generate-config
 test -e /etc/nixos/configuration.nix && sudo mv /etc/nixos/configuration.nix /tmp
 sudo ln -nfs ~/nix-config/configuration.nix /etc/nixos/configuration.nix
+sudo nixos-rebuild switch
 test -e ~/.config/nixpkgs/config.nix || (mkdir -p ~/.config/nixpkgs; ln -s ~/nix-config/.config/nixpkgs/config.nix ~/.config/nixpkgs)
 nix-env -q | grep -q user-packages || nix-env -i user-packages
 EOF

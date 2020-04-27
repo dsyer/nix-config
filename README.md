@@ -19,8 +19,8 @@ Then you are ready to start.
 The workflow is
 
 1. Generate an image (see below)
-2. Get it running in a VM
-3. Sync the NixOS config files (`./scripts/bootstrap.sh <remote-host>`)
+2. Get it running in a VM and set the `HOST` env var locally
+3. Sync the NixOS config files (`./scripts/bootstrap.sh $HOST -p 2222` for port 2222)
 4. SSH into the VM, `cd ~/nixos-config && make`
 5. Hack `~/nixos-config` on the remote
 6. Rebuild with `sudo nixos-rebuild switch`
@@ -28,6 +28,23 @@ The workflow is
 8. GOTO 5.
 
 To enable step 7 to work you need to be able to push to github, so the `bootstrap.sh` script copies your _private_ key into the remote. You obviously don't want to share that with anyone, but it's safe because only you can log in (the user account doesn't have a password and root login is disabled).
+
+## Hacking and Updateing Nix
+
+Once you have an image and can SSH into it, the remote user has a `nix-env` that can be used to install and run other tools. A basic starter kit was provided in `.config/nixpkgs/config.nix`, but you can edit that file and update the environment on the remote:
+
+```
+$ ssh $HOST -p 2222
+~$ nix-env -q
+user-packages
+~$ nix-env -i user-packages
+replacing old 'user-packages'
+installing 'user-packages'
+building '/nix/store/6siapgfxvw04m6cdkxcnx1877f8crhlg-user-environment.drv'...
+created 6 symlinks in user environment
+```
+
+> HINT: It might help to run `nix-env -G 1` (reset the environment to generation 1) before you install. This is in case you have added packages individually and they now clash with the definitions in `user-packages`.
 
 ## Generating Images
 
@@ -38,7 +55,7 @@ Choose an image format (e.g. Qemu or Google). You can use the source code to gen
 Create a disk and make it writable
 
 ```
-$ nix-shell -p nixos-generators
+$ nix-shell
 $ DISK=$(nixos-generate -f qcow -c qemu.nix)
 $ cp $DISK disk.qcow && chmod +w disk.qcow
 ```
@@ -46,7 +63,7 @@ $ cp $DISK disk.qcow && chmod +w disk.qcow
 Boot it in Qemu:
 
 ```
-$ qemu-system-x86_64 --enable-kvm -hda disk.qcow -boot d -net nic -net user,hostfwd=tcp::2222-:22 -localtime -m 4096
+$ qemu-system-x86_64 --enable-kvm -hda disk.qcow -boot d -net nic -net user,hostfwd=tcp::2222-:22 -m 4096
 ```
 
 Use localhost IP address (not loopback) to log in:
@@ -68,7 +85,7 @@ Image resized.
 You have to leave out the SSH configuration `configuration.nix`. So there's a special config file (`gce.nix`). Copy it to Google Storage (assuming there is already a bucket called `${GCP_PROJECT}_cloudbuild`):
 
 ```
-$ nix-shell -p nixos-generators
+$ nix-shell
 $ GCP_PROJECT=$(gcloud config list core/project --format='value(core.project)')
 $ DISK=$(nixos-generate -f gce -c gce.nix)
 $ gsutil cp $DISK  gs://${GCP_PROJECT}_cloudbuild/nixos.raw.tar.gz
@@ -112,7 +129,7 @@ $ lxd init
 Then you can generate and import an image:
 
 ```
-$ nix-shell -p nixos-generators
+$ nix-shell
 $ lxc image import --alias nixos $(nixos-generate -f lxc-metadata) $(nixos-generate -f lxc -c lxc.nix)
 $ lxc launch nixos nixos
 ```

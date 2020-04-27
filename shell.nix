@@ -1,6 +1,6 @@
-with import <nixpkgs> {};
+with import <nixpkgs> { };
 pkgs.mkShell {
-    name = "test";
-    buildInputs = [
-    ] ++ (callPackage ./nix/code.nix {}).environment.systemPackages;
+  name = "test";
+  buildInputs = [ nixos-generators ]
+    ++ (callPackage ./nix/code.nix { }).environment.systemPackages;
 }

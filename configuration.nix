@@ -2,6 +2,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  virtualisation.docker.enable = true;
+
   imports = [
     /etc/nixos/hardware-configuration.nix
     ./nix/base.nix

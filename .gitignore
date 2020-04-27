@@ -1,3 +1,5 @@
 *.qcow
 *.raw
+*.img
+*.iso
 result

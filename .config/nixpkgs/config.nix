@@ -6,14 +6,19 @@ with (import <nixpkgs> { }); {
         name = "user-packages";
         paths = [
           dive
+          emacs
           docker-compose
           gitAndTools.hub
+          google-chrome
           jq
           kind
           kubectl
           kustomize
           skaffold
+          synergy
+          terminator
           vim
+          vscode
           yq
         ];
       };

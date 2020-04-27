@@ -13,6 +13,7 @@ with (import <nixpkgs> { }); {
           kubectl
           kustomize
           skaffold
+          vim
           yq
         ];
       };

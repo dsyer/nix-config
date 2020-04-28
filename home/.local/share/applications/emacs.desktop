@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Emacs
+Comment=Emacs Editor
+Path=/home/dsyer/
+Exec=/home/dsyer/.nix-profile/bin/emacs
+Icon=emacs
+Terminal=0
+Type=Application
+Encoding=UTF-8
+Categories=Application;Development;

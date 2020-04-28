@@ -1,0 +1,13 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Synergy
+Exec=/home/dsyer/.nix-profile/bin/synergy
+Icon=synergy
+Type=Application
+Categories=Utility
+
+
+

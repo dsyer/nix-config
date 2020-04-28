@@ -1,4 +1,5 @@
-with (import <nixpkgs> { }); {
+with (import <nixpkgs> { });
+{
   packageOverrides = pkgs:
     with pkgs; {
       userPackages = buildEnv {
@@ -6,9 +7,12 @@ with (import <nixpkgs> { }); {
         name = "user-packages";
         paths = [
           dive
-          emacs
           docker-compose
+          emacs
+          envsubst
           gitAndTools.hub
+          gitFull
+          gnumake
           google-chrome
           jq
           kind
@@ -25,3 +29,5 @@ with (import <nixpkgs> { }); {
     };
   allowUnfree = true;
 }
+
+

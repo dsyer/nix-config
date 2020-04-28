@@ -13,8 +13,7 @@ nix/users.nix: ~/.ssh/id_rsa.pub
 
 dotfiles/%: templates/dotfiles/%
 	cat $< | EMAIL=$(email) NAME=$(name) envsubst > $@
-	LANG=C stow -v 2 -t ~ -S dotfiles
-	LANG=C stow -v 2 -t ~/.config -S .config
+	LANG=C stow -v 2 -t ~ -S home
 
 clean:
 	rm -f nix/users.nix

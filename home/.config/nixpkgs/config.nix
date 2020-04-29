@@ -1,6 +1,6 @@
 with (import <nixpkgs> { }); let
   hostname = builtins.replaceStrings ["\n"] [""] (builtins.readFile "/etc/hostname" );
-  localPath = builtins.toPath ./. + "/${hostname}.nix";
+  localPath = ./. + "/${hostname}.nix";
   localPackages = if (builtins.pathExists localPath) then
     (import localPath).paths
   else

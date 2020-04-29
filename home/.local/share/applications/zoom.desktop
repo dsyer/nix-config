@@ -4,8 +4,8 @@ Version=1.0
 Terminal=false
 Type=Application
 Name=Zoom
-Exec=zoom
-Icon=zoom
+Exec=zoom %u
+Icon=Zoom.png
 Type=Application
 Categories=Network
 

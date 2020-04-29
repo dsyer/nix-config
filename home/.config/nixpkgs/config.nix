@@ -6,6 +6,7 @@ with (import <nixpkgs> { });
         # Apply with `nix-env -i user-packages`
         name = "user-packages";
         paths = [
+          autorandr
           dive
           docker-compose
           emacs
@@ -14,14 +15,16 @@ with (import <nixpkgs> { });
           gitFull
           gnumake
           google-chrome
+          google-cloud-sdk
           jq
           kind
           kubectl
           kustomize
+          nixfmt
+          qemu
           skaffold
           synergy
           terminator
-          vim
           vscode
           yq
         ];

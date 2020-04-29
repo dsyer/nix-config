@@ -1,4 +1,4 @@
 { config, pkgs, ... }: {
-  imports = [ ./nix/base.nix ];
+  imports = [ ../packages/base.nix ];
   config.virtualisation.googleComputeImage.diskSize = 8192;
 }

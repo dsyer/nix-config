@@ -1,10 +1,10 @@
-with (import <nixpkgs> { }); let
-  hostname = builtins.replaceStrings ["\n"] [""] (builtins.readFile "/etc/hostname" );
+with (import <nixpkgs> { });
+let
+  hostname =
+    builtins.replaceStrings [ "\n" ] [ "" ] (builtins.readFile "/etc/hostname");
   localPath = ./. + "/${hostname}.nix";
-  localPackages = if (builtins.pathExists localPath) then
-    (import localPath).paths
-  else
-    [];
+  localPackages =
+    if (builtins.pathExists localPath) then (import localPath).paths else [ ];
 in {
   packageOverrides = pkgs:
     with pkgs; {
@@ -14,29 +14,21 @@ in {
         paths = localPackages ++ [
           dive
           docker-compose
-          emacs
           envsubst
           gitAndTools.hub
-          gitFull
           gnumake
-          google-chrome
           google-cloud-sdk
           jq
           kind
           kubectl
           kustomize
           nixfmt
-          qemu
           skaffold
           stow
-          synergy
-          terminator
-          vscode
           yq
         ];
       };
     };
   allowUnfree = true;
 }
-
 

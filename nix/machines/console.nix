@@ -5,17 +5,24 @@
   virtualisation.docker.enable = true;
 
   imports = [
-    /mnt/etc/nixos/hardware-configuration.nix
-    ./nix/base.nix
-    ./nix/ssh.nix
-    ./nix/remote.nix
-    ./nix/ui.nix
+    /etc/nixos/hardware-configuration.nix
+    ../packages/base.nix
+    ../packages/ssh.nix
+    ../packages/remote.nix
   ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  
+  # Use the MBR boot loader.
+  boot = {
+    loader = {
+      grub.enable = true;
+      grub.version = 2;
+      grub.device = "/dev/sda";
+    };
+    cleanTmpDir = true;
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernel.sysctl = { "fs.inotify.max_user_watches" = "1048576"; };
+  };
+
   environment.systemPackages = with pkgs; [ envsubst git gnumake stow ];
 
   # This value determines the NixOS release from which the default

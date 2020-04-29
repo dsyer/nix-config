@@ -15,4 +15,5 @@
     cursor_color = "#aaaaaa"
     font = Monospace 12
     foreground_color = "#000000"
+    scrollback_lines = 9999
     use_system_font = False

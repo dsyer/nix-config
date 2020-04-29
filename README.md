@@ -52,18 +52,18 @@ Choose an image format (e.g. Qemu or Google). You can use the source code to gen
 
 ### Qemu
 
-Create a disk and make it writable
+Create a disk and make it writable (you need more then 8GB RAM - it fails on my laptop)
 
 ```
 $ nix-shell
-$ DISK=$(nixos-generate -f qcow -c qemu.nix)
+$ DISK=$(nixos-generate -f qcow -c nix/images/qemu.nix)
 $ cp $DISK disk.qcow && chmod +w disk.qcow
 ```
 
 Boot it in Qemu:
 
 ```
-$ qemu-system-x86_64 --enable-kvm -hda disk.qcow -boot d -net nic -net user,hostfwd=tcp::2222-:22 -m 4096
+$ qemu-system-x86_64 -enable-kvm -hda disk.qcow -boot d -net nic -net user,hostfwd=tcp::2222-:22 -m 4096
 ```
 
 Use localhost IP address (not loopback) to log in:
@@ -73,10 +73,10 @@ $ HOST=`hostname -I | tr ' ' '\n' | grep 192`
 $ ssh $HOST -p 2222
 ```
 
-You will need more memory, or some swap, if you want to hack on it. You might also need to increase the size of the disk:
+You might need more memory, or some swap, if you want to hack on it, especially if you want to enable a desktop. You might also need to increase the size of the disk:
 
 ```
-$ qemu resize disk.qcow +8G
+$ qemu-img resize disk.qcow +8G
 Image resized.
 ```
 
@@ -87,7 +87,7 @@ You have to leave out the SSH configuration `configuration.nix`. So there's a sp
 ```
 $ nix-shell
 $ GCP_PROJECT=$(gcloud config list core/project --format='value(core.project)')
-$ DISK=$(nixos-generate -f gce -c gce.nix)
+$ DISK=$(nixos-generate -f gce -c nix/images/gce.nix)
 $ gsutil cp $DISK  gs://${GCP_PROJECT}_cloudbuild/nixos.raw.tar.gz
 ```
 
@@ -130,7 +130,7 @@ Then you can generate and import an image:
 
 ```
 $ nix-shell
-$ lxc image import --alias nixos $(nixos-generate -f lxc-metadata) $(nixos-generate -f lxc -c lxc.nix)
+$ lxc image import --alias nixos $(nixos-generate -f lxc-metadata) $(nixos-generate -f lxc -c nix/images/lxc.nix)
 $ lxc launch nixos nixos
 ```
 

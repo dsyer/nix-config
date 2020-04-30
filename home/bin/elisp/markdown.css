@@ -1,0 +1,91 @@
+/* main.css 2008/04/22 nicolekonicki */
+
+/*
+ * MAIN CSS
+ *
+ * All css for the screen, other than color-specific styles,
+ * should be included here.  Color styles should be included
+ * in colors.css.
+ *
+ */
+
+/*
+ * COMMON STYLES
+ */
+
+  body
+  {
+    font: 12px Arial, Helvetica, "Bitstream Vera Sans", sans-serif;
+  }
+/*
+ * TEXT FORMATTING STYLES
+ */
+
+h1 {
+	font-size: 1.4em;
+	padding:14px 0 5px 0;
+	line-height:125%;
+}
+
+h2 {
+	font-size: 1.2em;
+	padding:10px 0 2px 0;
+}
+
+h3 {
+	font-size: 1em;
+	padding:8px 0 5px 0;
+}
+
+h4 {
+	font-size: 1em;
+	padding-top:8px;
+}
+
+
+
+/*
+ * TABLE STYLES
+ */    
+ 
+ table 
+ {
+        border: 1px solid black;
+ 	border-spacing:1;
+ 	margin:0;
+ 	border-collapse:collapse;
+ }
+ 
+ th 
+ {
+        border: 1px solid black;
+ 	height:19px;
+ 	text-align:left;
+ 	font-weight:bold;
+ 	margin:0;
+ 	padding:3px 6px 0 6px;
+ 	line-height:19px;
+ }
+ 
+ td
+ {
+        border: 1px solid black;
+ 	margin:0;
+ 	padding:4px 6px;
+ 	vertical-align:top;
+ }
+ 
+/*
+ * FORM STYLES
+ */
+
+  input, textarea, textfield
+  {
+    margin: 0;
+    font-family: Arial, Helvetica, "Bitstream Vera Sans", sans-serif;
+    padding: 1px;
+    font-size: 100%;
+  }
+  
+
+

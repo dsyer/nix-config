@@ -1,0 +1,3 @@
+#!/bin/sh
+
+gromit-mpx -t || gromit-mpx -k F9 -a

@@ -14,7 +14,9 @@ in {
         paths = localPackages ++ [
           dive
           docker-compose
+          dos2unix
           envsubst
+          file
           gitAndTools.hub
           gnumake
           google-cloud-sdk

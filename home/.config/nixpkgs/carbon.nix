@@ -1,4 +1,4 @@
 with (import <nixpkgs> { }); {
   paths =
-    [ autorandr curl emacs gitFull google-chrome qemu terminator vscode ];
+    [ autorandr curl emacs gitFull google-chrome qemu terminator vscode zoom-us ];
 }

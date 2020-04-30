@@ -5,6 +5,7 @@
   virtualisation.docker.enable = true;
 
   networking.hostName = "carbon";
+  networking.extraHosts = "192.168.2.19 tower";
   networking.networkmanager.enable = true;
 
   imports = [
@@ -18,8 +19,12 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  services.synergy.client.enable = true;
+  services.synergy.client.screenName = "carbon";
+  services.synergy.client.serverAddress = "tower";
   
-  environment.systemPackages = with pkgs; [ envsubst git gnumake stow ];
+  environment.systemPackages = with pkgs; [ envsubst git gnumake stow vim ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

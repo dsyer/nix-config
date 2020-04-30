@@ -5,6 +5,7 @@ let
   localPath = ./. + "/${hostname}.nix";
   localPackages =
     if (builtins.pathExists localPath) then (import localPath).paths else [ ];
+  kapp = import ./packages/kapp.nix { inherit pkgs; };
 in {
   packageOverrides = pkgs:
     with pkgs; {
@@ -21,6 +22,7 @@ in {
           gnumake
           google-cloud-sdk
           jq
+          kapp
           kind
           kubectl
           kustomize

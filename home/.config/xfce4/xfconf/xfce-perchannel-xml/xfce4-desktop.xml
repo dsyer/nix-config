@@ -25,6 +25,50 @@
           <property name="last-image" type="string" value="/nix/store/gkwqp0cbxcbzrgl5c3g45gyq95vgc40n-xfdesktop-4.14.1/share/backgrounds/xfce/xfce-stripes.png"/>
         </property>
       </property>
+      <property name="monitoreDP-1" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/nix/store/gkwqp0cbxcbzrgl5c3g45gyq95vgc40n-xfdesktop-4.14.1/share/backgrounds/xfce/xfce-stripes.png"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/nix/store/gkwqp0cbxcbzrgl5c3g45gyq95vgc40n-xfdesktop-4.14.1/share/backgrounds/xfce/xfce-stripes.png"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/nix/store/gkwqp0cbxcbzrgl5c3g45gyq95vgc40n-xfdesktop-4.14.1/share/backgrounds/xfce/xfce-stripes.png"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/nix/store/gkwqp0cbxcbzrgl5c3g45gyq95vgc40n-xfdesktop-4.14.1/share/backgrounds/xfce/xfce-stripes.png"/>
+        </property>
+      </property>
+      <property name="monitorHDMI-2" type="empty">
+        <property name="workspace0" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/nix/store/gkwqp0cbxcbzrgl5c3g45gyq95vgc40n-xfdesktop-4.14.1/share/backgrounds/xfce/xfce-stripes.png"/>
+        </property>
+        <property name="workspace1" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/nix/store/gkwqp0cbxcbzrgl5c3g45gyq95vgc40n-xfdesktop-4.14.1/share/backgrounds/xfce/xfce-stripes.png"/>
+        </property>
+        <property name="workspace2" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/nix/store/gkwqp0cbxcbzrgl5c3g45gyq95vgc40n-xfdesktop-4.14.1/share/backgrounds/xfce/xfce-stripes.png"/>
+        </property>
+        <property name="workspace3" type="empty">
+          <property name="color-style" type="int" value="0"/>
+          <property name="image-style" type="int" value="5"/>
+          <property name="last-image" type="string" value="/nix/store/gkwqp0cbxcbzrgl5c3g45gyq95vgc40n-xfdesktop-4.14.1/share/backgrounds/xfce/xfce-stripes.png"/>
+        </property>
+      </property>
     </property>
   </property>
 </channel>

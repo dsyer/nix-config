@@ -4,6 +4,9 @@
 
   virtualisation.docker.enable = true;
 
+  networking.hostName = "carbon";
+  networking.networkmanager.enable = true;
+
   imports = [
     /etc/nixos/hardware-configuration.nix
     ../packages/base.nix

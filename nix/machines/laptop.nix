@@ -23,6 +23,8 @@
   services.synergy.client.enable = true;
   services.synergy.client.screenName = "carbon";
   services.synergy.client.serverAddress = "tower";
+
+  services.printing.enable = true;
   
   environment.systemPackages = with pkgs; [ envsubst git gnumake stow vim ];
 

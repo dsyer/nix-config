@@ -29,7 +29,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/nix/store/gkwqp0cbxcbzrgl5c3g45gyq95vgc40n-xfdesktop-4.14.1/share/backgrounds/xfce/xfce-stripes.png"/>
+          <property name="last-image" type="string" value="/nix/store/gkwqp0cbxcbzrgl5c3g45gyq95vgc40n-xfdesktop-4.14.1/share/backgrounds/xfce/xfce-blue.jpg"/>
         </property>
         <property name="workspace1" type="empty">
           <property name="color-style" type="int" value="0"/>
@@ -51,7 +51,7 @@
         <property name="workspace0" type="empty">
           <property name="color-style" type="int" value="0"/>
           <property name="image-style" type="int" value="5"/>
-          <property name="last-image" type="string" value="/nix/store/gkwqp0cbxcbzrgl5c3g45gyq95vgc40n-xfdesktop-4.14.1/share/backgrounds/xfce/xfce-stripes.png"/>
+          <property name="last-image" type="string" value="/nix/store/gkwqp0cbxcbzrgl5c3g45gyq95vgc40n-xfdesktop-4.14.1/share/backgrounds/xfce/xfce-blue.jpg"/>
           <property name="rgba1" type="array">
             <value type="double" value="0.913725"/>
             <value type="double" value="0.725490"/>

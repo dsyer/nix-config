@@ -1,0 +1,13 @@
+# ^a is used in emacs mode for bash (N.B. ^x is still available as ^xX)
+escape ^xX
+
+# kill startup message
+startup_message off
+
+# define a bigger scrollback, default is 100 lines
+defscrollback 4096
+
+caption always "%{=b dw}%?%{-b dg}%-Lw%?%{+b dk}(%{+b dr}%n:%t%{+b dk})%?(%u)%?%{-b dw}%?%{-b dg}%+Lw%?%{-b dw}"
+
+# caption always "%{=b dw}:%{-b dw}:%{=b dk}[ %{-b dw}%{-b dg}$USER%{-b dw}@%{-b dg}%H %{=b dk}] [ %= %?%{-b dg}%-Lw%?%{+b dk}(%{+b dw}%n:%t%{+b dk})%?(%u)%?%{-b dw}%?%{-b dg}%+Lw%? %{=b dk}]%{-b dw}:%{+b dw}:"
+

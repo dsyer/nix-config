@@ -1,4 +1,5 @@
 [Added Associations]
-x-scheme-handler/http=exo-web-browser.desktop;
-x-scheme-handler/https=exo-web-browser.desktop;
-
+x-scheme-handler/http=chrome.desktop;
+x-scheme-handler/https=chrome.desktop;
+[Default Applications]
+text/html=chrome.desktop;

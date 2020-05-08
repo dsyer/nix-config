@@ -1,3 +1,3 @@
 with (import <nixpkgs> { }); {
-  paths = [ emacs gitFull google-chrome qemu synergy terminator vscode ];
+  paths = [ emacs gitFull google-chrome synergy terminator vscode ];
 }

@@ -3,10 +3,13 @@
   nixpkgs.config.allowUnfree = true;
 
   virtualisation.docker.enable = true;
+  virtualisation.libvirtd.enable = true;
 
   networking.hostName = "carbon";
   networking.extraHosts = "192.168.2.19 tower";
   networking.networkmanager.enable = true;
+
+  time.timeZone = "UK/London";
 
   imports = [
     /etc/nixos/hardware-configuration.nix
@@ -25,8 +28,8 @@
   services.synergy.client.serverAddress = "tower";
 
   services.printing.enable = true;
-  
-  environment.systemPackages = with pkgs; [ envsubst git gnumake stow vim ];
+
+  environment.systemPackages = with pkgs; [ envsubst git gnumake gnupg stow vim ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

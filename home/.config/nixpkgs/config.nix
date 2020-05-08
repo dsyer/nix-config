@@ -29,7 +29,9 @@ in {
           nixfmt
           skaffold
           stow
+          unzip
           yq
+          zip
         ];
       };
     };

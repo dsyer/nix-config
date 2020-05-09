@@ -20,6 +20,8 @@ home/%: templates/home/%
 	cat $< | EMAIL=$(email) NAME=$(name) envsubst > $@
 
 install:
+	mkdir -p ~/.config/Code/User
+	mkdir -p ~/.local/share
 	LANG=C stow -v 2 -t ~ -S home
 
 clean-home:

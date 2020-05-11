@@ -21,7 +21,7 @@ home/%: templates/home/%
 
 install:
 	mkdir -p ~/.config/Code/User
-	mkdir -p ~/.local/share
+	mkdir -p ~/.local/share/applications
 	LANG=C stow -v 2 -t ~ -S home
 
 clean-home:

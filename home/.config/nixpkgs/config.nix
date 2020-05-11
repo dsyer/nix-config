@@ -5,7 +5,6 @@ let
   localPath = ./. + "/${hostname}.nix";
   localPackages =
     if (builtins.pathExists localPath) then (import localPath).paths else [ ];
-  kapp = import ./packages/kapp.nix { inherit pkgs; };
 in {
   packageOverrides = pkgs:
     with pkgs; {
@@ -34,6 +33,15 @@ in {
           zip
         ];
       };
+      nur = import (builtins.fetchTarball
+        "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+          inherit pkgs;
+        };
+      # Conveniences, e.g. `nix-shell -p jdk14`:
+      jdk14 = nur.repos.moaxcp.adoptopenjdk-hotspot-bin-14;
+      spring-boot = nur.repos.moaxcp.spring-boot-cli-2_2_7;
+      pack = import ./packages/pack.nix { inherit pkgs; };
+      kapp = import ./packages/kapp.nix { inherit pkgs; };
     };
   allowUnfree = true;
 }

@@ -1,14 +1,1 @@
-self: super: {
-  userPackagePaths = super.config.userPackagePaths ++ (with super; [
-    autorandr
-    curl
-    emacs
-    gitFull
-    google-chrome
-    jdk11
-    qemu
-    terminator
-    vscode
-    zoom-us
-  ]);
-}
+pkgs: with pkgs; [ autorandr curl jdk11 qemu zoom-us ]

@@ -1,5 +1,5 @@
 with (import <nixpkgs> { });
-{
+rec {
   onHost = host: config:
     let
       name = builtins.replaceStrings [ "\n" ] [ "" ]

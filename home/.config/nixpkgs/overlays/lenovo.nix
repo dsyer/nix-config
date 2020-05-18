@@ -1,15 +1,12 @@
 self: super:
-super.config.onHost "carbon" {
+super.config.onHost "lenovo" {
   userPackagePaths = super.config.userPackagePaths ++ (with super; [
-    autorandr
-    curl
     emacs
     gitFull
     google-chrome
     jdk11
-    qemu
+    synergy
     terminator
     vscode
-    zoom-us
   ]);
 }

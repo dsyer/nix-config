@@ -1,12 +1,11 @@
 with (import <nixpkgs> { });
-let
-  hostname =
-    builtins.replaceStrings [ "\n" ] [ "" ] (builtins.readFile "/etc/hostname");
-  localPath = ./. + "/${hostname}.nix";
-  localPackages =
-    if (builtins.pathExists localPath) then (import localPath).paths else [ ];
-in {
-  userPackagesPaths = [
+{
+  onHost = host: config:
+    let
+      name = builtins.replaceStrings [ "\n" ] [ "" ]
+        (builtins.readFile "/etc/hostname");
+    in if name == host then config else { };
+  userPackagePaths = [
     dive
     docker-compose
     dos2unix
@@ -32,7 +31,7 @@ in {
       userPackages = buildEnv {
         # Apply with `nix-env -i user-packages`
         name = "user-packages";
-        paths = userPackagesPaths;
+        paths = userPackagePaths;
       };
       nur = import (builtins.fetchTarball
         "https://github.com/nix-community/NUR/archive/master.tar.gz") {

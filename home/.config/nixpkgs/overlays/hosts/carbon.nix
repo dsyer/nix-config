@@ -1,5 +1,4 @@
-self: super:
-super.config.onHost "carbon" {
+self: super: {
   userPackagePaths = super.config.userPackagePaths ++ (with super; [
     autorandr
     curl

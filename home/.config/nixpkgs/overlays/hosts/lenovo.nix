@@ -1,5 +1,4 @@
-self: super:
-super.config.onHost "lenovo" {
+self: super: {
   userPackagePaths = super.config.userPackagePaths ++ (with super; [
     emacs
     gitFull

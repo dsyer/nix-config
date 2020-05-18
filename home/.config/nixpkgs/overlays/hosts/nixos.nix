@@ -1,6 +1,6 @@
 self: super:
 with super;
-super.config.onHost "nixos" (let
+let
   # Additional packages for a qemu image with nixos
   uiPackages = if (builtins.pathExists /etc/X11) then [
     emacs
@@ -13,6 +13,5 @@ super.config.onHost "nixos" (let
   ] else
     [ ];
 in {
-  userPackagePaths = super.config.userPackagePaths ++ uiPackages
-    ++ [ git vim ];
-})
+  userPackagePaths = super.config.userPackagePaths ++ uiPackages ++ [ git vim ];
+}

@@ -1,10 +1,5 @@
 with (import <nixpkgs> { });
 rec {
-  onHost = host: config:
-    let
-      name = builtins.replaceStrings [ "\n" ] [ "" ]
-        (builtins.readFile "/etc/hostname");
-    in if name == host then config else { };
   userPackagePaths = [
     dive
     docker-compose

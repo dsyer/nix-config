@@ -112,8 +112,7 @@ $ gcloud config set compute/region europe-west2-c
 $ gcloud config set compute/zone europe-west2
 ```
 
-and then create the machine (optionally add `--custom-cpu 8` and/or `--custom-memory 32` in GB):
-
+and then create the machine (optionally add `--custom-cpu 8 --custom-memory 32` in GB):
 
 ```
 $ gcloud compute instances create nixos --image-project $GCP_PROJECT --image nixos

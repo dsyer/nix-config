@@ -105,7 +105,14 @@ NAME    PROJECT           FAMILY  DEPRECATED  STATUS
 nixos   cf-sandbox-dsyer                      READY
 ```
 
-Use the image to create a VM instance and from there ssh into it directly (provided you use the right private key).
+Use the image to create a VM instance and from there ssh into it directly (provided you use the right private key). Optionally set the compute location:
+
+```
+$ gcloud config set compute/region europe-west2-c
+$ gcloud config set compute/zone europe-west2
+```
+
+and then create the machine (opyionally add `--custom-cpu <n>` and/or `--custom-memory <n>` in GB):
 
 ```
 $ gcloud compute instances create nixos --image-project $GCP_PROJECT --image nixos

@@ -27,5 +27,6 @@ install:
 	LANG=C stow -v 2 -t ~ -S home
 
 clean-home:
+	rm -rf ~/.config/nixpkgs
 	for f in $(shell (cd templates/home; find . -type f)); do rm -f ~/$$f; done
 	for f in $(shell (cd templates/home; find . -type f)); do rm -f home/$$f; done

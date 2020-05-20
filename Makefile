@@ -1,6 +1,7 @@
 .PHONY: all
 
 key = `cat ~/.ssh/id_rsa.pub`
+user = ${USER}
 email = dsyer@pivotal.io
 name = "Dave Syer"
 
@@ -18,6 +19,7 @@ home: $(home)
 
 home/%: templates/home/%
 	cat $< | EMAIL=$(email) NAME=$(name) envsubst > $@
+	find home -type f -exec sed -i -e 's/dsyer/$(user)/g' {} \;
 
 install:
 	mkdir -p ~/.config/Code/User

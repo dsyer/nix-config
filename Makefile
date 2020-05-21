@@ -13,7 +13,8 @@ nix/packages/users.nix: ~/.ssh/id_rsa.pub
 	cat templates/nix/packages/users.nix | KEY=$(key) envsubst > nix/packages/users.nix
 
 clean:
-	rm -f nix/users.nix
+	rm -f nix/packages/users.nix
+	rm -f home/.gitconfig
 
 home: $(home)
 

@@ -12,4 +12,5 @@ let
     (import localPath) super
   else
     [ ];
-in { userPackagePaths = super.config.userPackagePaths ++ uiPackages ++ hostPackages; }
+  platformPackages = (import (./. + "/hosts/platform.nix")) super;
+in { userPackagePaths = super.config.userPackagePaths ++ uiPackages ++ hostPackages ++ platformPackages; }

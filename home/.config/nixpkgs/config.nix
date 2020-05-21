@@ -12,6 +12,7 @@ rec {
     jq
     kapp
     kind
+    kind-setup
     kubectl
     kustomize
     nixfmt

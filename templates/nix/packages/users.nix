@@ -11,7 +11,7 @@
     uid = 1000;
     group = "${USER}";
     shell = pkgs.bash;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" "networkmanager" ];
     openssh.authorizedKeys.keys = [ "${KEY}" ];
   };
 

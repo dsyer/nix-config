@@ -1,7 +1,7 @@
 self: super: {
 
   kind-setup = super.writeShellScriptBin "kind-setup" ''
-version=''${KIND_VERSION:-v1.15.7}
+version=''${KIND_VERSION:-v1.17.5}
 clusters=$(kind get clusters)
 reg_name='registry'
 reg_port='5000'

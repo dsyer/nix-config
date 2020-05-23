@@ -1,5 +1,5 @@
-with (import <nixpkgs> { });
-rec {
+with (import <nixpkgs> { }); let
+  localPackagePaths = (import ./packages.nix) pkgs;
   userPackagePaths = [
     dive
     docker-compose
@@ -22,12 +22,14 @@ rec {
     yq
     zip
   ];
+in
+rec {
   packageOverrides = pkgs:
     with pkgs; {
       userPackages = buildEnv {
         # Apply with `nix-env -i user-packages`
         name = "user-packages";
-        paths = userPackagePaths;
+        paths = userPackagePaths ++ localPackagePaths;
       };
       nur = import (builtins.fetchTarball
         "https://github.com/nix-community/NUR/archive/master.tar.gz") {

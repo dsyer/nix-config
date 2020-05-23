@@ -12,7 +12,6 @@ with (import <nixpkgs> { }); let
     jq
     kapp
     kind
-    kind-setup
     kubectl
     kustomize
     nixfmt

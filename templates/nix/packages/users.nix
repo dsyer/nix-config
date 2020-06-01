@@ -1,17 +1,17 @@
 { config, pkgs, ... }: {
 
-  users.groups.user = {
+  users.groups.dsyer = {
     name = "${USER}";
     members = [ "${USER}" ];
     gid = 1000;
   };
 
-  users.extraUsers.user = {
+  users.extraUsers.dsyer = {
     isNormalUser = true;
     uid = 1000;
     group = "${USER}";
     shell = pkgs.bash;
-    extraGroups = [ "wheel" "docker" "networkmanager" ];
+    extraGroups = [ "wheel" "docker" "audio" "networkmanager" ];
     openssh.authorizedKeys.keys = [ "${KEY}" ];
   };
 

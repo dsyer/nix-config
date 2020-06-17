@@ -1,7 +1,7 @@
 self: super: {
   skaffold = super.skaffold.overrideAttrs (oldAttrs: rec {
-    version = "1.10.1";
-    rev = "931a70a6334436735bfc4ff7633232dd5fc73cc1";
+    version = "1.11.0";
+    rev = "b1346ef1caded079c5abf11e5c0daae2322c9c6b";
     buildFlagsArray = let t = "${oldAttrs.goPackagePath}/pkg/skaffold";
     in ''
       -ldflags=
@@ -13,7 +13,7 @@ self: super: {
       owner = "GoogleContainerTools";
       repo = "skaffold";
       rev = "v${version}";
-      sha256 = "1qi4b0304jjpv5npa5yfrrfg7yv5p838qqql3sgx4f47ysyyq0as";
+      sha256 = "035xp34m8kzb75mivgf3kw026n2h6g2a7j2mi32nxl1a794w36zi";
     };
   });
 }

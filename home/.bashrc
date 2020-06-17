@@ -110,9 +110,9 @@ fi
 
 export DOCKER_BUILDKIT=1
 
-export JAVA_OPTS="-noverify -XX:CICompilerCount=1 -XX:TieredStopAtLevel=1 -Djava.security.egd=file:/dev/./urandom"
-export ANT_OPTS=$JAVA_OPTS
-export MAVEN_OPTS=$JAVA_OPTS
+# export JAVA_OPTS="-noverify -XX:CICompilerCount=1 -XX:TieredStopAtLevel=1 -Djava.security.egd=file:/dev/./urandom"
+# export ANT_OPTS=$JAVA_OPTS
+# export MAVEN_OPTS=$JAVA_OPTS
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then

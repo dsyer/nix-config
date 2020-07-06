@@ -3,3 +3,5 @@
 	name = Dave Syer
 [core]
 	hooksPath=/home/dsyer/dev/git-hooks-core
+[credential]
+	helper = cache --timeout=3600

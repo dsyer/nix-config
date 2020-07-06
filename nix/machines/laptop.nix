@@ -31,7 +31,7 @@
 
   services.printing.enable = true;
 
-  environment.systemPackages = with pkgs; [ envsubst git gnumake gnupg stow vim ];
+  environment.systemPackages = with pkgs; [ envsubst git gnumake gnupg stow vim zlib ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

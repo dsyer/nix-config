@@ -1,1 +1,1 @@
-pkgs: with pkgs; [ autorandr curl jdk11 qemu zoom-us ]
+pkgs: with pkgs; [ autorandr curl eclipse jdk11 qemu ]

@@ -8,6 +8,11 @@ if [ "${build%*.gradle}" == "${build}" ]; then
     fi
     build=${build}/build.gradle;
 fi
+if ! [ -e ${build} ]; then build=${build}.kts; fi
+if ! [ -e ${build} ]; then
+	echo could not locate build.gradle
+	exit 1
+fi
 build=${build#./*}
 dirname=`dirname $build`
 
@@ -20,7 +25,7 @@ fi
 
 function gradle {
          dir=`pwd`
-         while [ "$dir/*.gradle" != "" ] && ! [ -e $dir/gradlew ] && ! [ -z $dir ]; do dir=${dir%/*}; done
+         while [ "$dir/*.gradle*" != "" ] && ! [ -e $dir/gradlew ] && ! [ -z $dir ]; do dir=${dir%/*}; done
          if [ -e $dir/gradlew ]; then
               echo "Running wrapper at $dir"
               $dir/gradlew "$@"

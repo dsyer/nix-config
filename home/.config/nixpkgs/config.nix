@@ -3,6 +3,7 @@ with (import <nixpkgs> { }); let
   userPackagePaths = [
     dive
     docker-compose
+    docker-credential-gcr
     dos2unix
     envsubst
     file
@@ -30,13 +31,6 @@ rec {
         name = "user-packages";
         paths = userPackagePaths ++ localPackagePaths;
       };
-      nur = import (builtins.fetchTarball
-        "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-          inherit pkgs;
-        };
-      # Conveniences, e.g. `nix-shell -p jdk14`:
-      jdk14 = nur.repos.moaxcp.adoptopenjdk-hotspot-bin-14;
-      spring-boot = nur.repos.moaxcp.spring-boot-cli-2_2_7;
     };
   allowUnfree = true;
 }

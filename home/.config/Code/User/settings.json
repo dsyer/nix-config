@@ -7,7 +7,14 @@
     "java.semanticHighlighting.enabled": true,
     "window.zoomLevel": 0,
     "remote.SSH.configFile": "/home/dsyer/.ssh/config",
-    "remote.SSH.path": "/run/current-system/sw/bin/ssh",
     "workbench.editor.enablePreview": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "java.project.importOnFirstTimeStartup": "automatic",
+    "maven.executable.preferMavenWrapper": true,
+    "java.dependency.packagePresentation": "hierarchical",
+    "java.dependency.showMembers": true,
+    "editor.renderWhitespace": "all",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }

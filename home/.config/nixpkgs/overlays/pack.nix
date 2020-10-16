@@ -2,12 +2,12 @@ self: super: {
 
   pack = super.stdenv.mkDerivation {
     pname = "pack";
-    version = "0.9.0";
+    version = "0.13.1";
     src = super.fetchurl {
       # nix-prefetch-url this URL to find the hash value
       url =
-        "https://github.com/buildpacks/pack/releases/download/v0.9.0/pack-v0.9.0-linux.tgz";
-      sha256 = "1admg8rasqg5m4dg3j5xad92pn0f6a55hq2f7i3vl0n9g8b5hna7";
+        "https://github.com/buildpacks/pack/releases/download/v0.13.1/pack-v0.13.1-linux.tgz";
+      sha256 = "0z5vr8kp6l6zmzn23bpy3444906bygb323bc89vcfl16p80lwxwd";
     };
     phases = [ "installPhase" "patchPhase" ];
     installPhase = ''

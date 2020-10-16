@@ -17,7 +17,7 @@
 
 (jdecomp-mode 1)
 (customize-set-variable 'jdecomp-decompiler-paths
-                        '((cfr . "~/bin/cfr-0.141.jar")))
+                        '((cfr . "~/bin/cfr_0.150.jar")))
 ;;; use groovy-mode when file ends in .groovy or has #!/bin/groovy at start
 (autoload 'groovy-mode "groovy-mode" "Major mode for editing Groovy code." t)
 (add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode))

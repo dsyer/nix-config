@@ -16,5 +16,6 @@
     "editor.renderWhitespace": "all",
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
-    }
+    },
+    "java.home": "/home/dsyer/Programs/jdk11"
 }

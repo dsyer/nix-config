@@ -23,9 +23,11 @@ home/%: templates/home/%
 	find home -type f -exec sed -i -e 's/dsyer/$(user)/g' {} \;
 
 install:
+	mkdir -p ~/bin
 	mkdir -p ~/.config/Code/User
 	mkdir -p ~/.local/share/applications
 	LANG=C stow -v 2 -t ~ -S home
+	if [ -d "hosts/`hostname`" ]; then cd hosts; LANG=C stow -v 2 -t ~ -S `hostname`; else cd hosts; LANG=C stow -v 2 -t ~ -S default; fi
 
 clean-home:
 	rm -rf ~/.config/nixpkgs

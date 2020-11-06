@@ -78,7 +78,7 @@
       <property name="style" type="uint" value="0"/>
     </property>
     <property name="plugin-12" type="string" value="clock">
-      <property name="timezone" type="string" value="GMT-1"/>
+      <property name="timezone" type="string" value="GMT"/>
     </property>
     <property name="plugin-13" type="string" value="separator">
       <property name="style" type="uint" value="0"/>

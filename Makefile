@@ -4,6 +4,7 @@ key = `cat ~/.ssh/id_rsa.pub`
 user = ${USER}
 email = dsyer@pivotal.io
 name = "Dave Syer"
+host = $(shell hostname)
 
 home = $(shell (cd templates; find home -type f))
 
@@ -27,7 +28,7 @@ install:
 	mkdir -p ~/.config/Code/User
 	mkdir -p ~/.local/share/applications
 	LANG=C stow -v 2 -t ~ -S home
-	if [ -d "hosts/`hostname`" ]; then cd hosts; LANG=C stow -v 2 -t ~ -S `hostname`; else cd hosts; LANG=C stow -v 2 -t ~ -S default; fi
+	if [ -d "hosts/$(host)" ]; then cd hosts; LANG=C stow -v 2 -t ~ -S $(host); else cd hosts; LANG=C stow -v 2 -t ~ -S default; fi
 
 clean-home:
 	rm -rf ~/.config/nixpkgs

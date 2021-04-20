@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=STS
+Comment=SpringSource ToolSuite
+Path=/home/dsyer/Programs/springsource/sts-4.9.0.RELEASE
+Exec=env JAVA_HOME=/home/dsyer/jdk11 /home/dsyer/Programs/springsource/sts-4.9.0.RELEASE/SpringToolSuite4
+Icon=/home/dsyer/.local/share/applications/sts4.png
+Terminal=0
+# SWT_GTK3=0 GTK2_RC_FILES=/home/dsyer/Programs/springsource/gtkprefs
+# SWT_GTK3=0 # (Makes tooltips render unreadable)
+Type=Application
+Encoding=UTF-8
+Categories=Application;Development;

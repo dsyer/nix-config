@@ -2,14 +2,14 @@ self: super: {
   gdb-8 = super.gdb.overrideAttrs (oldAttrs: rec {
     version = "8.3.1";
     basename = "gdb-${version}";
-    name = super.stdenv.lib.optionalString
+    name = super.lib.optionalString
       (super.stdenv.targetPlatform != super.stdenv.hostPlatform)
       (super.stdenv.targetPlatform.config + "-") + basename;
     preConfigure = "";
     configureScript = null;
     readline = super.readline;
     patches = [ ./patches/debug-info-from-env.patch ]
-      ++ super.stdenv.lib.optionals super.stdenv.isDarwin [ ./patches/darwin-target-match.patch ];
+      ++ super.lib.optionals super.stdenv.isDarwin [ ./patches/darwin-target-match.patch ];
     src = self.fetchurl {
       url = "mirror://gnu/gdb/${basename}.tar.xz";
       # sha256 = "0mf5fn8v937qwnal4ykn3ji1y2sxk0fa1yfqi679hxmpg6pdf31n"; # 9.2

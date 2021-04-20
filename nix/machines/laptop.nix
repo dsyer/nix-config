@@ -24,6 +24,10 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # Extra kernel modules
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+  # Register a v4l2loopback device at boot
+  boot.kernelModules = [ "v4l2loopback" ];
 
   services.synergy.client.enable = true;
   services.synergy.client.screenName = "carbon";
@@ -31,7 +35,15 @@
 
   services.printing.enable = true;
 
-  environment.systemPackages = with pkgs; [ envsubst git gnumake gnupg stow vim zlib ];
+  environment.systemPackages = with pkgs; [
+    envsubst
+    git
+    gnumake
+    gnupg
+    stow
+    vim
+    zlib
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

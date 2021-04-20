@@ -1,6 +1,6 @@
 { config, pkgs, ... }: {
 
-  environment.systemPackages = with pkgs; [ gitAndTools.hub jdk11 nodejs-12_x ];
+  environment.systemPackages = with pkgs; [ gitAndTools.hub jdk11 nodejs-12_x mono6 ];
 
   environment.shellAliases = { git = "hub"; };
 
@@ -11,6 +11,9 @@
         ln -nfs /run/current-system/sw/bin/node $f;
       done
     fi
+    for f in $HOME/.vscode/extensions/ms-dotnettools.csharp-*/.omnisharp/*/bin; do
+      ln -nfs /run/current-system/sw/bin/mono $f;
+    done
   '';
 
 }

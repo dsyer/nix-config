@@ -2,7 +2,7 @@
 
 <channel name="xfce4-power-manager" version="1.0">
   <property name="xfce4-power-manager" type="empty">
-    <property name="power-button-action" type="empty"/>
+    <property name="power-button-action" type="uint" value="1"/>
     <property name="show-tray-icon" type="bool" value="true"/>
     <property name="logind-handle-lid-switch" type="bool" value="true"/>
     <property name="dpms-on-battery-sleep" type="int" value="5"/>

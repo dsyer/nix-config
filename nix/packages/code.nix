@@ -7,6 +7,7 @@ let
       # You need to launch code this way to make it work on a NixOS remote, or
       # else manually patch the remote by linking node (12) to ~/.vscode-server/bin/*/
       ms-vscode-remote.remote-ssh
+      ms-dotnettools.vscode-dotnet-pack
     ])
     # ~/.nix-defexpr/channels/nixpkgs/pkgs/misc/vscode-extensions/update_installed_exts.sh | tee nix/extensions.nix
     ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace (import ./extensions.nix).extensions;

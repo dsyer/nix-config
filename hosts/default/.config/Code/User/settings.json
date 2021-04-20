@@ -17,5 +17,7 @@
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "java.refactor.renameFromFileExplorer": "autoApply"
+    "java.refactor.renameFromFileExplorer": "autoApply",
+    "go.useLanguageServer": true,
+    "redhat.telemetry.enabled": true
 }

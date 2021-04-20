@@ -1,1 +1,1 @@
-pkgs: with pkgs; [ autorandr curl eclipse jdk11 qemu ]
+pkgs: with pkgs; [ autorandr ]

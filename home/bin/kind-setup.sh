@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=${KIND_VERSION:-v1.19.0}
+version=${KIND_VERSION:-v1.19.7}
 clusters=$(kind get clusters)
 reg_name='registry'
 reg_port='5000'
@@ -23,13 +23,29 @@ function create_cluster() {
 	reg_ip=$(docker inspect -f '{{.NetworkSettings.IPAddress}}' "${reg_name}")
 
 	# create a cluster with the local registry enabled in containerd
-	cat <<EOF | kind create cluster --image=kindest/node:${version} --name "${KIND_CLUSTER_NAME}" --config=-
+	cat <<EOF | kind create cluster --name "${KIND_CLUSTER_NAME}" --config=-
 kind: Cluster 
 apiVersion: kind.x-k8s.io/v1alpha4
 containerdConfigPatches: 
 - |-
   [plugins."io.containerd.grpc.v1.cri".registry.mirrors."localhost:${reg_port}"]
     endpoint = ["http://${reg_name}:${reg_port}"]
+nodes:
+- role: control-plane
+  image: kindest/node:${version}
+  kubeadmConfigPatches:
+    - |
+      kind: InitConfiguration
+      nodeRegistration:
+        kubeletExtraArgs:
+          node-labels: "ingress-ready=true"
+  extraPortMappings:
+    - containerPort: 80
+      hostPort: 80
+      protocol: TCP
+    - containerPort: 443
+      hostPort: 443
+      protocol: TCP
 EOF
 	docker network connect "kind" "${reg_name}"
 }

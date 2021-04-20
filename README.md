@@ -170,3 +170,7 @@ To clean up, log out of all active sessions. Then
 $ lxc stop nixos
 $ lxc delete nixos
 ```
+
+# NixOS Tips
+
+* [Full boot partition](https://discourse.nixos.org/t/what-to-do-with-a-full-boot-partition/2049/11)

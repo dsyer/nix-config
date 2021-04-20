@@ -63,7 +63,10 @@ else
 
 publishing {
 	publications {
-		mavenJava(MavenPublication) {
+		maven(MavenPublication) {
+            groupId = 'org.example'
+            artifactId = 'application'
+            version = '0.0.1'
 			from components.java
 		}
 	}
@@ -71,5 +74,9 @@ publishing {
 EOF
 	fi
 	(cd $dirname; gradle generatePomFileForMavenPublication > /dev/null 2>&1)
+	if ! [ -e ${dirname}/build/publications/maven/pom-default.xml ]; then
+		sed -i -e 's/mavenJava(MavenPublication)/maven(MavenPublication)/' $build;
+		(cd $dirname; gradle generatePomFileForMavenPublication > /dev/null 2>&1)
+	fi
 	cat ${dirname}/build/publications/maven/pom-default.xml
 fi

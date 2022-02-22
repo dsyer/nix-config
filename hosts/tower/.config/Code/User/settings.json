@@ -5,7 +5,6 @@
     "java.requirements.JDK11Warning": false,
     "java.configuration.checkProjectSettingsExclusions": false,
     "java.semanticHighlighting.enabled": true,
-    "window.zoomLevel": 1,
     "remote.SSH.configFile": "/home/dsyer/.ssh/config",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -20,15 +19,65 @@
     "java.refactor.renameFromFileExplorer": "autoApply",
     "go.useLanguageServer": true,
     "java.jdt.ls.vmargs": "-Xmx2048m -javaagent:\"/home/dsyer/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
-    "java.home": "/home/dsyer/Programs/jdk11",
     "terminal.integrated.scrollback": 100000,
     "[xml]": {
-    
         "editor.autoClosingBrackets": "never",
         "files.trimFinalNewlines": true,
         "files.trimTrailingWhitespace": false
     },
     "remote.containers.defaultExtensions": [
         "vscjava.vscode-java-pack"
-    ]
+    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "git.ignoreMissingGitWarning": true,
+    "redhat.telemetry.enabled": true,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "editor.insertSpaces": false,
+    "java.completion.favoriteStaticMembers": [
+        "org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.*",
+"org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.*",
+"org.springframework.test.web.servlet.result.MockMvcResultHandlers.*",
+"org.springframework.test.web.servlet.result.MockMvcResultMatchers.*",
+"org.hamcrest.Matchers.*",
+"org.junit.Assert.*",
+"org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*",
+"org.springframework.restdocs.payload.PayloadDocumentation.*",
+"org.springframework.restdocs.hypermedia.HypermediaDocumentation.*",
+"org.assertj.core.api.Assertions.*",
+"org.mockito.Matchers.*",
+"org.mockito.Mockito.*",
+"org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders.*",
+"org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.*",
+"org.springframework.security.test.web.servlet.response.SecurityMockMvcResultMatchers.*",
+"org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers.*",
+"org.springframework.test.web.client.match.MockRestRequestMatchers.*",
+"org.springframework.test.web.client.response.MockRestResponseCreators.*",
+"org.hamcrest.CoreMatchers.*",
+"com.github.tomakehurst.wiremock.client.WireMock.*",
+"org.springframework.web.reactive.function.server.RouterFunctions.*",
+"org.springframework.web.reactive.function.server.RequestPredicates.*",
+"org.springframework.web.reactive.function.server.ServerResponse.*",
+"org.junit.Assume.*",
+"org.junit.jupiter.api.Assertions.*",
+"org.junit.jupiter.api.Assumptions.*",
+"org.junit.jupiter.api.DynamicContainer.*",
+"org.junit.jupiter.api.DynamicTest.*"
+    ],
+    "azureFunctions.showProjectWarning": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "plantuml.fileExtensions": ".wsd,.pu,.puml,.plantuml,.iuml,.uml",
+    "plantuml.server": "https://www.plantuml.com/plantuml",
+    "plantuml.render": "PlantUMLServer",
+    "java.debug.settings.vmArgs": "-noverify",
+    "java.import.gradle.enabled": false,
+    "java.import.gradle.java.home": "/home/dsyer/jdk17"
 }

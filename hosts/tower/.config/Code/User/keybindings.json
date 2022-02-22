@@ -1,0 +1,17 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+alt+[Minus]",
+        "command": "workbench.action.navigateBack"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-markdown.extension.onCopyLineDown",
+        "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible && editorLangId == 'markdown'"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "-markdown.extension.onCopyLineUp",
+        "when": "editorTextFocus && !editorReadonly && !suggestWidgetVisible && editorLangId == 'markdown'"
+    }
+]

@@ -23,6 +23,7 @@ alias clear="echo -ne '\033c'"
 function mvn {
          dir=`pwd`
          while [ -e $dir/pom.xml ] && ! [ -e $dir/mvnw ] && ! [ -z $dir ]; do dir=${dir%/*}; done
+		 if ! [ -e $dir/mvnw ] && [ -e $dir/../mvnw ]; then dir=${dir%/*}; fi
          if [ -e $dir/mvnw ]; then
               echo "Running wrapper at $dir"
               $dir/mvnw "$@"

@@ -2,7 +2,7 @@ pkgs:
 let
   # Additional packages for any system with X11
   uiPackages = if (builtins.pathExists /etc/X11) then
-    with pkgs; [ emacs gitFull google-chrome synergy terminator vscode ]
+    with pkgs; [ emacs gitFull google-chrome barrier terminator vscode ]
   else
     [ ];
   hostname =

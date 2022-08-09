@@ -114,17 +114,17 @@ export DOCKER_BUILDKIT=1
 # export ANT_OPTS=$JAVA_OPTS
 # export MAVEN_OPTS=$JAVA_OPTS
 
+export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
 	PATH="$HOME/bin:$HOME/Programs/apache-maven/bin:$HOME/Programs/apache-ant/bin:$PATH"
 fi
 
-# added by travis gem
-[ -f /home/dsyer/.travis/travis.sh ] && source /home/dsyer/.travis/travis.sh
-
 if which java >/dev/null 2>&1; then
 	export JAVA_HOME=$(dirname $(readlink -f `which java`) | sed -e 's,/bin$,,')
 fi
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 ! [ -d /etc/nixos ] && [[ -s "/home/dsyer/.sdkman/bin/sdkman-init.sh" && ! $(which sdkman-init.sh > /dev/null l 2>&1) ]] && source "/home/dsyer/.sdkman/bin/sdkman-init.sh"
 

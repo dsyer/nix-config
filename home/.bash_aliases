@@ -47,3 +47,7 @@ function gradle {
          fi        
          `which gradle` "$@"
 }
+
+alias fixhub="git config remote.origin.url $(git config remote.origin.url | sed -e 's,git://,https://,')"
+
+alias steamlink="flatpak run com.valvesoftware.SteamLink"

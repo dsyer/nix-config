@@ -18,16 +18,14 @@
     },
     "java.refactor.renameFromFileExplorer": "autoApply",
     "go.useLanguageServer": true,
-    "java.jdt.ls.vmargs": "-Xmx2048m -javaagent:\"/home/dsyer/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
+    "java.jdt.ls.vmargs": "-Xmx4096m", // -javaagent:\"/home/dsyer/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
     "terminal.integrated.scrollback": 100000,
     "[xml]": {
         "editor.autoClosingBrackets": "never",
         "files.trimFinalNewlines": true,
-        "files.trimTrailingWhitespace": false
+        "files.trimTrailingWhitespace": false,
+        "editor.defaultFormatter": "redhat.vscode-xml"
     },
-    "remote.containers.defaultExtensions": [
-        "vscjava.vscode-java-pack"
-    ],
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
@@ -78,6 +76,10 @@
     "plantuml.server": "https://www.plantuml.com/plantuml",
     "plantuml.render": "PlantUMLServer",
     "java.debug.settings.vmArgs": "-noverify",
-    "java.import.gradle.enabled": false,
-    "java.import.gradle.java.home": "/home/dsyer/jdk17"
+    "[markdown]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[java]": {
+        "editor.defaultFormatter": "redhat.java"
+    },
 }

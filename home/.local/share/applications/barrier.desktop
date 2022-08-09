@@ -3,9 +3,9 @@
 Version=1.0
 Terminal=false
 Type=Application
-Name=Synergy
-Exec=/home/dsyer/.nix-profile/bin/synergy
-Icon=synergy
+Name=Barrier
+Exec=/home/dsyer/.nix-profile/bin/barrier
+Icon=barrier
 Type=Application
 Categories=Utility
 

@@ -75,11 +75,23 @@
     "plantuml.fileExtensions": ".wsd,.pu,.puml,.plantuml,.iuml,.uml",
     "plantuml.server": "https://www.plantuml.com/plantuml",
     "plantuml.render": "PlantUMLServer",
-    "java.debug.settings.vmArgs": "-noverify",
+    // "java.debug.settings.vmArgs": "-noverify",
     "[markdown]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[java]": {
         "editor.defaultFormatter": "redhat.java"
     },
+    "asls.traceLevel": "verbose",
+    "npm.keybindingsChangedWarningShown": true,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "java.import.gradle.enabled": false,
+    "boot-java.rewrite.reconcile": true,
+    "markdown.extension.toc.updateOnSave": false,
+    "java.debug.settings.showQualifiedNames": false,
+    "java.server.launchMode": "Standard",
+    // "java.trace.server": "verbose",
+    // "spring-boot.ls.logfile": "/tmp/spring-boot-ls-mustache-sample.log",
 }

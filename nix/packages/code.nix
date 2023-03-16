@@ -17,7 +17,7 @@ let
 in {
 
   environment.systemPackages = with pkgs; [
-    nodejs-12_x
+    nodejs-16_x
     vscode-with-extensions
   ];
 

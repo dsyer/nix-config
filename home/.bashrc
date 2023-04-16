@@ -118,7 +118,7 @@ export XDG_DATA_DIRS=$XDG_DATA_DIRS:/var/lib/flatpak/exports/share:$HOME/.local/
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
-	PATH="$HOME/bin:$HOME/Programs/apache-maven/bin:$HOME/Programs/apache-ant/bin:$PATH"
+	PATH="$HOME/bin:$PATH"
 fi
 
 if which java >/dev/null 2>&1; then

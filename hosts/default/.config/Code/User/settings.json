@@ -3,9 +3,7 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "java.requirements.JDK11Warning": false,
-    "java.configuration.checkProjectSettingsExclusions": false,
     "java.semanticHighlighting.enabled": true,
-    "window.zoomLevel": -1,
     "remote.SSH.configFile": "/home/dsyer/.ssh/config",
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -20,8 +18,28 @@
     "java.refactor.renameFromFileExplorer": "autoApply",
     "go.useLanguageServer": true,
     "redhat.telemetry.enabled": true,
-    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m -javaagent:\"/home/dsyer/.vscode/extensions/gabrielbb.vscode-lombok-1.0.1/server/lombok.jar\"",
+    // "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx1G -Xms100m",
     "[javascript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "FSharp.suggestGitignore": false,
+    "editor.detectIndentation": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "boot-java.rewrite.reconcile": true,
+    "npm.keybindingsChangedWarningShown": true,
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "[java]": {
+        "editor.suggest.snippetsPreventQuickSuggestions": false
+    },
+    "window.zoomLevel": 1,
+    "java.server.launchMode": "Standard",
+    "editor.stickyScroll.enabled": true,
+    "[python]": {
+        "editor.formatOnType": true
     }
 }

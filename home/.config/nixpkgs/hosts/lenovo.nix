@@ -1,1 +1,1 @@
-pkgs: with pkgs; [ jdk11 ]
+pkgs: with pkgs; [ jdk17 ]

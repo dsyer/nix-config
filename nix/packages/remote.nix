@@ -1,19 +1,13 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
 
-  environment.systemPackages = with pkgs; [ gitAndTools.hub jdk11 nodejs-12_x mono6 ];
+  environment.systemPackages = with pkgs; [ gitAndTools.hub jdk17 nodejs-16_x mono6 wget ];
 
   environment.shellAliases = { git = "hub"; };
 
-  # Make VS Code work with a remote client
-  environment.loginShellInit = ''
-    if [ -d $HOME/.vscode-server/bin ]; then
-      for f in $HOME/.vscode-server/bin/*; do 
-        ln -nfs /run/current-system/sw/bin/node $f;
-      done
-    fi
-    for f in $HOME/.vscode/extensions/ms-dotnettools.csharp-*/.omnisharp/*/bin; do
-      ln -nfs /run/current-system/sw/bin/mono $f;
-    done
-  '';
+  imports = [
+    (fetchTarball "https://github.com/msteen/nixos-vscode-server/tarball/master")
+  ];
+
+  services.vscode-server.enable = true;
 
 }

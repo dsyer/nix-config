@@ -2,7 +2,7 @@
 
 key = `cat ~/.ssh/id_rsa.pub`
 user = ${USER}
-email = dsyer@pivotal.io
+email = dsyer@vmware.com
 name = "Dave Syer"
 host = $(shell hostname)
 

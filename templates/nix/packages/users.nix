@@ -1,12 +1,12 @@
 { config, pkgs, ... }: {
 
-  users.groups.dsyer = {
+  users.groups.builder = {
     name = "${USER}";
     members = [ "${USER}" ];
     gid = 1000;
   };
 
-  users.extraUsers.dsyer = {
+  users.extraUsers.builder = {
     isNormalUser = true;
     uid = 1000;
     group = "${USER}";

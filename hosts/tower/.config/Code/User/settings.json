@@ -92,6 +92,13 @@
     "markdown.extension.toc.updateOnSave": false,
     "java.debug.settings.showQualifiedNames": false,
     "java.server.launchMode": "Standard",
+    "terminal.integrated.shellIntegration.enabled": false,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": false,
+        "scminput": false
+    },
     // "java.trace.server": "verbose",
     // "spring-boot.ls.logfile": "/tmp/spring-boot-ls-mustache-sample.log",
 }

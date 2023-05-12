@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Default Light+",
+    "workbench.colorTheme": "Default Light Modern",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "java.requirements.JDK11Warning": false,
@@ -41,5 +41,8 @@
     "editor.stickyScroll.enabled": true,
     "[python]": {
         "editor.formatOnType": true
-    }
+    },
+	"editor.insertSpaces": false,
+	"java.import.gradle.enabled": false,
+	"editor.inlineSuggest.enabled": true
 }

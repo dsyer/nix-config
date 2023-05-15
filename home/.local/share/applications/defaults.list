@@ -1,6 +1,3 @@
 text/html=google-chrome.desktop
 x-scheme-handler/http=google-chrome.desktop
 x-scheme-handler/https=google-chrome.desktop
-x-scheme-handler/steamvr=valve-URI-steamvr.desktop
-application/x-vrmonitor=valve-vrmonitor.desktop
-x-scheme-handler/vrmonitor=valve-URI-vrmonitor.desktop

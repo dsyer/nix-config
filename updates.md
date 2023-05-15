@@ -22,6 +22,13 @@ Curl for installing orther things:
 
     $ sudo apt install curl
 
+## Remove Libre Office
+
+    $ sudo apt remove --purge libreoffice*
+    $ sudo apt clean
+    $ sudo apt autoremove
+
+
 ## Nix
 
 Follow instructions (I use single user) from the [Nixos site]https://nixos.org/download.html):
@@ -56,8 +63,7 @@ Log out and log back in to make sure the group is applied.
 
 ## Chrome Browser
 
-Installs fine from Nix, but the XDG (menu) doesn't show up without some manual intervention. So far I have been manually maintaining a file in `~/.loca/share/applications`. Automation to follow.
-
+Installs fine from Nix, but the XDG (menu) doesn't show up without some manual intervention. So far I have been manually maintaining a file in `~/.local/share/applications`. Automation to follow.
 
 ## Monitors
 

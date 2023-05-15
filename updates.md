@@ -132,3 +132,13 @@ Other things I do:
 * Copy `~/.m2/settings.xml` from one of my existing work machines.
 * Set up the quick launch bar in the openbox desktop. You drag apps down onto it from the start menu with the _left_ mouse button.
 * Track down all the settings for default browser and terminal and set them up for chrome and terminator respectfully. There's one set in `Preferences -> Alternatives Configurator`. Also check the keyboard shortcuts in `Preferences -> LXQt -> Shortcuts`.
+
+## NVIDIA
+
+My Dell Precision has an NVIDIA graphics card. I don't need it, but it seems to be on by default, and I suspect it might be causing the laptop to freeze up and/or crash. I found out about the available drivers with
+
+    .$ ubuntu-drivers devices
+
+and the installed one was `nouveau` (the free one). Tried `ubuntu-drivers autoinstall` and it failed, but picking the recommended one from the list and manually installing worked:
+
+    $ sudo apt install nvidia-driver-530-open

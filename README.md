@@ -108,8 +108,8 @@ nixos   cf-sandbox-dsyer                      READY
 Use the image to create a VM instance and from there ssh into it directly (provided you use the right private key). Optionally set the compute location:
 
 ```
-$ gcloud config set compute/region europe-west2-c
-$ gcloud config set compute/zone europe-west2
+$ gcloud config set compute/region europe-west2
+$ gcloud config set compute/zone europe-west2-c
 ```
 
 and then create the machine (optionally add `--custom-cpu 8 --custom-memory 32` in GB):

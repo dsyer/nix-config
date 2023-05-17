@@ -96,8 +96,12 @@
     "github.copilot.enable": {
         "*": true,
         "plaintext": true,
-        "markdown": false,
+        "markdown": true,
         "scminput": false
+    },
+    "editor.inlineSuggest.enabled": true,
+    "[python]": {
+        "editor.formatOnType": true
     },
     // "java.trace.server": "verbose",
     // "spring-boot.ls.logfile": "/tmp/spring-boot-ls-mustache-sample.log",

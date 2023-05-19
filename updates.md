@@ -136,6 +136,7 @@ I install VSCode from Nix, but the extensions are installed by the app. Ones tha
 Other things I do:
 
 * Edit `/etc/hosts` to add well-known endpoints on the local network.
+* Edit `/etc/fstab` and add a swap partition (use `blkid` to find the UUID).
 * Copy `~/.m2/settings.xml` from one of my existing work machines.
 * Track down all the settings for default browser and terminal and set them up for chrome and terminator respectfully. There's one set in `Preferences -> Alternatives Configurator`. Also check the keyboard shortcuts in `Preferences -> LXQt -> Shortcuts`.
 

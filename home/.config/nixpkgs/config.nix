@@ -9,7 +9,7 @@ with (import <nixpkgs> { }); let
     file
     gitAndTools.hub
     gnumake
-    (google-cloud-sdk.withExtraComponents [google-cloud-sdk.components.gke-gcloud-auth-plugin])
+    (with google-cloud-sdk; withExtraComponents [components.gke-gcloud-auth-plugin])
     jq
     kapp
     kind

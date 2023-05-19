@@ -26,6 +26,7 @@ home/%: templates/home/%
 install:
 	mkdir -p ~/bin
 	mkdir -p ~/.config/Code/User
+	mkdir -p ~/.config/lxqt
 	mkdir -p ~/.local/share/applications
 	for f in $(shell ls ~/.nix-profile/share/applications/*); do ln -fs $$f ~/.local/share/applications/; done
 	LANG=C stow -v 2 -t ~ -S home

@@ -35,6 +35,13 @@ Follow instructions (I use single user) from the [Nixos site]https://nixos.org/d
 
     $ sh <(curl -L https://nixos.org/nix/install) --no-daemon
 
+For a multiuser system you can use `--daemon` but then you might have to edit `/etc/sddm.conf` to exclude the `nixbld` user from the list of users that can log in.
+
+```
+[Users]
+HideShells=/usr/bin/nologin,/sbin/nologin
+```
+
 If you are using the [Nix config](https://github.com/dsyer/nix-config) you need to spray a few dotfiles around:
 
     $ nix-shell
@@ -109,7 +116,7 @@ The normal VPN network manager in Ubuntu is installed with
     
 ## Flatpak
 
-Can be useful - some packages are only distributed that way.
+Can be useful and it doesn't work well when installed from - some packages are only distributed that way.
 
     $ sudo apt install flatpak
 
@@ -130,7 +137,6 @@ Other things I do:
 
 * Edit `/etc/hosts` to add well-known endpoints on the local network.
 * Copy `~/.m2/settings.xml` from one of my existing work machines.
-* Set up the quick launch bar in the openbox desktop. You drag apps down onto it from the start menu with the _left_ mouse button.
 * Track down all the settings for default browser and terminal and set them up for chrome and terminator respectfully. There's one set in `Preferences -> Alternatives Configurator`. Also check the keyboard shortcuts in `Preferences -> LXQt -> Shortcuts`.
 
 ## NVIDIA

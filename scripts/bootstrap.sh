@@ -16,6 +16,7 @@ fi
 
 ssh $remote $port mkdir -m 700 -p .ssh
 ssh $remote $port test -e ~/.ssh/id_rsa || scp $cp_port ~/.ssh/id_rsa* $remote:~/.ssh
+# ssh-copy-id -i ~/.ssh/id_rsa.pub $port $remote
 
 rsync -e "ssh $port" --filter=':- .gitignore' -a -P . $remote:~/nix-config
 

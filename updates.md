@@ -28,7 +28,6 @@ Curl for installing orther things:
     $ sudo apt clean
     $ sudo apt autoremove
 
-
 ## Nix
 
 Follow instructions (I use single user) from the [Nixos site]https://nixos.org/download.html):
@@ -149,3 +148,7 @@ My Dell Precision has an NVIDIA graphics card. I don't need it, but it seems to 
 and the installed one was `nouveau` (the free one). Tried `ubuntu-drivers autoinstall` and it failed, but picking the recommended one from the list and manually installing worked:
 
     $ sudo apt install nvidia-driver-530-open
+
+## Zoom
+
+Download the `.deb` package from zoom.us and attempt to install it with `dpkg -i ...`. It fails and you fix it with `sudo apt update --fix-missing; sudo apt install -f`. Then it might just work or you can install it again with `dpkg -i ...`.

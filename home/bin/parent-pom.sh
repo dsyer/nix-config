@@ -4,11 +4,11 @@ poms=$(find . -name pom.xml | egrep -v initial)
 
 modules=()
 for pom in $poms; do
-    pom=${pom#./*}
-    if ! [ $pom == "pom.xml" ] && [ ${pom#*/target} == $pom ]; then
-        dir=${pom%*/pom.xml}
-        modules+=($dir)
-    fi
+	pom=${pom#./*}
+	if ! [ $pom == "pom.xml" ] && [ ${pom#*/target} == $pom ]; then
+		dir=${pom%*/pom.xml}
+		modules+=($dir)
+	fi
 done
 
 cat <<EOF
@@ -19,7 +19,7 @@ cat <<EOF
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.9.RELEASE</version>
+		<version>3.1.0</version>
 	</parent>
 
 	<groupId>com.example</groupId>
@@ -32,39 +32,39 @@ cat <<EOF
 EOF
 
 for module in "${modules[@]}"; do
-    echo "		<module>"${module}"</module>"
+	echo "		<module>"${module}"</module>"
 done
 
 cat <<EOF
 	</modules>
 
 	<properties>
-        <java.version>1.8</java.version>
+		<java.version>17</java.version>
 	</properties>
 
 	<repositories>
 		<repository>
 			<id>spring-libs-snapshot</id>
-			<url>http://repo.spring.io/libs-snapshot</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
+			<url>http://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
 		</repository>
 	</repositories>
 	
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-libs-snapshot</id>
-			<url>http://repo.spring.io/libs-snapshot</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
+			<url>http://repo.spring.io/snapshot</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
 		</pluginRepository>
 	</pluginRepositories>
 

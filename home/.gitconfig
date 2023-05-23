@@ -8,3 +8,5 @@
 	minRacyThreshold = 4857 microseconds
 [init]
 	defaultBranch = main
+[hub]
+	protocol = ssh

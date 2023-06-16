@@ -50,5 +50,8 @@
 		"plaintext": false,
 		"markdown": true,
 		"scminput": false
+	},
+	"vs-kubernetes": {
+		"vs-kubernetes.ignore-recommendations": true
 	}
 }

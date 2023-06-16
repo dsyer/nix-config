@@ -112,10 +112,20 @@ The normal VPN network manager in Ubuntu is installed with
 
     $ sudo apt install network-manager-openconnect-gnome
     $ sudo systemctl restart NetworkManager
-    
+
+OpenConnect didn't work for me on my new laptop. There is a `globalprotect` CLI that did work:
+
+```
+$ globalprotect connect --portal gpu.vmware.com
+...
+$ globalprotect disconnect
+```
+
+I downloaded a `.deb` file from https://confluence.eng.vmware.com/pages/viewpage.action?spaceKey=NSD&title=GP+Linux+Upgrade+Procedure+-+Ubuntu+6.0.1. YMMV.
+
 ## Flatpak
 
-Can be useful and it doesn't work well when installed from - some packages are only distributed that way.
+Can be useful and it doesn't work well when installed from Nix - some packages are only distributed that way.
 
     $ sudo apt install flatpak
 

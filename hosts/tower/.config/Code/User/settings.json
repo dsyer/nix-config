@@ -103,6 +103,9 @@
     "[python]": {
         "editor.formatOnType": true
     },
+    "vs-kubernetes": {
+        "vs-kubernetes.ignore-recommendations": true
+    },
     // "java.trace.server": "verbose",
     // "spring-boot.ls.logfile": "/tmp/spring-boot-ls-mustache-sample.log",
 }

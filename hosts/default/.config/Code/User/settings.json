@@ -43,15 +43,16 @@
         "editor.formatOnType": true
     },
 	"editor.insertSpaces": false,
-	"java.import.gradle.enabled": false,
 	"editor.inlineSuggest.enabled": true,
 	"github.copilot.enable": {
 		"*": true,
-		"plaintext": false,
+		"plaintext": true,
 		"markdown": true,
 		"scminput": false
 	},
 	"vs-kubernetes": {
 		"vs-kubernetes.ignore-recommendations": true
-	}
+	},
+	"java.import.gradle.enabled": false,
+	"java.maven.downloadSources": true
 }

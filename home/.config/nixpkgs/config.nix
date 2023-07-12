@@ -7,6 +7,7 @@ with (import <nixpkgs> { }); let
     dos2unix
     envsubst
     file
+    # (with google-cloud-sdk; withExtraComponents [components.gke-gcloud-auth-plugin])
     gitAndTools.hub
     gnumake
     jq

@@ -1,0 +1,19 @@
+{
+	"Pojo": {
+		"prefix": "pojo",
+		"body": [
+			"class ${1:Foo} {",
+			"\tprivate String name;$0",
+			"}"
+		],
+		"description": "Create a new POJO class"
+	},
+	"Record": {
+		"prefix": "record",
+		"body": [
+			"record ${1:Foo}(String name) {}"
+		],
+		"description": "Create a new record"
+	}
+
+}

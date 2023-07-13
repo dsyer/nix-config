@@ -1,17 +1,32 @@
 {
-	"Pojo": {
+	"Declare new Pojo": {
 		"prefix": "pojo",
 		"body": [
 			"class ${1:Foo} {",
-			"\tprivate String name;$0",
+			"\tprivate String value;$0",
+			"\tpublic ${1:Foo}(String value) {",
+			"\t\tthis.value = value;",
+			"\t}",
+			"\tpublic String getValue() {",
+			"\t\treturn value;",
+			"\t}",
+			"\tpublic void setValue(String value) {",
+			"\t\tthis.value = value;",
+			"\t}",
+			"\t@Override",
+			"\tpublic String toString() {",
+			"\t\treturn \"${1:Foo}{\" +",
+			"\t\t\t\"value='\" + value + '\\'' +",
+			"\t\t\t'}';",
+			"\t}",
 			"}"
 		],
 		"description": "Create a new POJO class"
 	},
-	"Record": {
+	"Declare new record": {
 		"prefix": "record",
 		"body": [
-			"record ${1:Foo}(String name) {}"
+			"record ${1:Foo}(String value$0) {}"
 		],
 		"description": "Create a new record"
 	}

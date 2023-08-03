@@ -128,6 +128,7 @@ I downloaded a `.deb` file from https://confluence.eng.vmware.com/pages/viewpage
 Can be useful and it doesn't work well when installed from Nix - some packages are only distributed that way.
 
     $ sudo apt install flatpak
+    $ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 ## VSCode
 

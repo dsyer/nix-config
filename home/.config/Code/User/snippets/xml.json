@@ -1,10 +1,56 @@
 {
+	"Swagger annotations": {
+		"prefix": "swagger-annotations",
+		"body": [
+			"<dependency>",
+			"\t<groupId>io.swagger.core.v3</groupId>",
+			"\t<artifactId>swagger-annotations</artifactId>",
+			"\t<version>2.2.7</version>",
+			"</dependency>$0"
+		],
+		"description": "Swagger annotations dependency"
+	},
+	"Swagger UI": {
+		"prefix": "swagger-ui",
+		"body": [
+			"<dependency>",
+			"\t<groupId>org.springdoc</groupId>",
+			"\t<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>",
+			"\t<version>2.0.2</version>",
+			"</dependency>$0"
+		],
+		"description": "Swagger UI dependency"
+	},
+	"OpenAPI dependencies": {
+		"prefix": "openapi-dependencies",
+		"body": [
+			"<dependency>",
+			"\t<groupId>com.google.code.findbugs</groupId>",
+			"\t<artifactId>jsr305</artifactId>",
+			"\t<version>3.0.2</version>",
+			"</dependency>",
+			"<dependency>",
+			"\t<groupId>com.fasterxml.jackson.dataformat</groupId>",
+			"\t<artifactId>jackson-dataformat-yaml</artifactId>",
+			"</dependency>",
+			"<dependency>",
+			"\t<groupId>com.fasterxml.jackson.datatype</groupId>",
+			"\t<artifactId>jackson-datatype-jsr310</artifactId>",
+			"</dependency>",
+			"<dependency>",
+			"\t<groupId>org.openapitools</groupId>",
+			"\t<artifactId>jackson-databind-nullable</artifactId>",
+			"\t<version>0.2.2</version>",
+			"</dependency>$0"
+		],
+		"description": "Smallrye Maven plugin configuration"
+	},
 	"Smallrye plugin": {
 		"prefix": "smallrye",
 		"body": [
 			"<plugin>",
-			"\t<artifactId>smallrye-open-api-maven-plugin</artifactId>",
 			"\t<groupId>io.smallrye</groupId>",
+			"\t<artifactId>smallrye-open-api-maven-plugin</artifactId>",
 			"\t<version>3.1.1</version>",
 			"\t<executions>",
 			"\t\t<execution>",
@@ -37,7 +83,7 @@
 		"description": "Springdoc Maven plugin configuration"
 	},
 	"OpenAPI generator plugin": {
-		"prefix": "openapi",
+		"prefix": "openapi-plugin",
 		"body": [
 			"<plugin>",
 			"\t<groupId>org.openapitools</groupId>",
@@ -92,6 +138,16 @@
 			"</plugin>$0"
 		],
 		"description": "OpenAPI generator Maven plugin configuration"
+	},
+	"Native built tool plugin": {
+		"prefix": "native-plugin",
+		"body": [
+			"<plugin>",
+			"\t<groupId>org.graalvm.buildtools</groupId>",
+			"\t<artifactId>native-maven-plugin</artifactId>",
+			"</plugin>$0"
+		],
+		"description": "Native Built Tool Maven plugin configuration"
 	},
 	"Repositories": {
 		"prefix": "repositories",

@@ -106,6 +106,7 @@
     "vs-kubernetes": {
         "vs-kubernetes.ignore-recommendations": true
     },
+    "git.openRepositoryInParentFolders": "never",
     // "java.trace.server": "verbose",
     // "spring-boot.ls.logfile": "/tmp/spring-boot-ls-mustache-sample.log",
 }

@@ -16,8 +16,8 @@
 			"\t@Override",
 			"\tpublic String toString() {",
 			"\t\treturn \"${1:Foo}{\" +",
-			"\t\t\t\"value='\" + value + '\\'' +",
-			"\t\t\t'}';",
+			"\t\t\t\"value='\" + value + \"'\" +",
+			"\t\t\t\"}\";",
 			"\t}",
 			"}"
 		],
@@ -29,6 +29,64 @@
 			"record ${1:Foo}(String value$0) {}"
 		],
 		"description": "Create a new record"
+	},
+	"LocalServerPort": {
+		"prefix": "local-server-port",
+		"body": [
+			"@LocalServerPort",
+			"private int port;"
+		],
+		"description": "Create a @LocalServerPort field"
+	},
+	"RestTemplate ApiClient": {
+		"prefix": "openapi-client-beans",
+		"body": [
+			"@Bean",
+			"public RestTemplate restTemplate(RestTemplateBuilder builder) {",
+			"\treturn builder.build();",
+			"}",
+			"",
+			"@Bean",
+			"public ApiClient apiClient(RestTemplate rest) {",
+			"\treturn new ApiClient(rest);",
+			"}$0"
+		],
+		"description": "Add @Bean definitions for OpenAPI client"
+	},
+	"Cors Configurer": {
+		"prefix": "cors-configurer",
+		"body": [
+			"@Bean",
+			"public WebMvcConfigurer corsConfigurer() {",
+			"\treturn new WebMvcConfigurer() {",
+			"\t\t@Override",
+			"\t\tpublic void addCorsMappings(CorsRegistry registry) {",
+			"\t\t\tregistry.addMapping(\"/**\").allowCredentials(true)",
+			"\t\t\t\t\t.allowedOriginPatterns(\"*\")",
+			"\t\t\t\t\t.allowedHeaders(\"*\")",
+			"\t\t\t\t\t.allowedMethods(\"*\");",
+			"\t\t}",
+			"\t};",
+			"}$0"
+		],
+		"description": "Add @Bean definitions for OpenAPI client"
+	},
+	"CorsFilter Configuration": {
+		"prefix": "cors-filter",
+		"body": [
+			"@Bean",
+			"public CorsFilter corsFilter() {",
+			"\tUrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();\n",
+			"\t// Allow anyone and anything access.",
+			"\tCorsConfiguration config = new CorsConfiguration();",
+			"\tconfig.setAllowCredentials(true);",
+			"\tconfig.addAllowedOriginPattern(\"*\");",
+			"\tconfig.addAllowedHeader(\"*\");",
+			"\tconfig.addAllowedMethod(\"*\");\n",
+			"\tsource.registerCorsConfiguration(\"/**\", config);",
+			"\treturn new CorsFilter(source);",
+			"}$0"
+		],
+		"description": "Add @Bean definitions for OpenAPI client"
 	}
-
 }

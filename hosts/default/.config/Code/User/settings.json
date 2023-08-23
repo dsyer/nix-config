@@ -23,7 +23,7 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "[jsonc]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "FSharp.suggestGitignore": false,
     "editor.detectIndentation": false,
@@ -54,5 +54,17 @@
 		"vs-kubernetes.ignore-recommendations": true
 	},
 	"java.import.gradle.enabled": false,
-	"java.maven.downloadSources": true
+	"java.maven.downloadSources": true,
+	"java.completion.favoriteStaticMembers": [
+		"org.assertj.core.api.Assertions.*",
+		"org.junit.Assert.*",
+		"org.junit.Assume.*",
+		"org.junit.jupiter.api.Assertions.*",
+		"org.junit.jupiter.api.Assumptions.*",
+		"org.junit.jupiter.api.DynamicContainer.*",
+		"org.junit.jupiter.api.DynamicTest.*",
+		"org.mockito.Mockito.*",
+		"org.mockito.ArgumentMatchers.*",
+		"org.mockito.Answers.*"
+	]
 }

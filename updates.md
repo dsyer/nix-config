@@ -28,6 +28,12 @@ Curl for installing orther things:
     $ sudo apt clean
     $ sudo apt autoremove
 
+## Remove Power Management
+
+LXQt has its own power management features that clash with the ones that get added by the base Ubuntu. So you might need this to get a laptop to listen to lid events:
+
+    $ sudo apt remove acpid
+
 ## Nix
 
 Follow instructions (I use single user) from the [Nixos site]https://nixos.org/download.html):

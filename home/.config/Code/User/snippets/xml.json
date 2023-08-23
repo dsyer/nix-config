@@ -10,16 +10,16 @@
 		],
 		"description": "Swagger annotations dependency"
 	},
-	"Swagger UI": {
-		"prefix": "swagger-ui",
+	"Swagger API": {
+		"prefix": "swagger-api",
 		"body": [
 			"<dependency>",
 			"\t<groupId>org.springdoc</groupId>",
-			"\t<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>",
+			"\t<artifactId>springdoc-openapi-starter-webmvc-api</artifactId>",
 			"\t<version>2.0.2</version>",
 			"</dependency>$0"
 		],
-		"description": "Swagger UI dependency"
+		"description": "Swagger API dependency, generates /v3/api-docs"
 	},
 	"OpenAPI dependencies": {
 		"prefix": "openapi-dependencies",
@@ -63,7 +63,7 @@
 		],
 		"description": "Smallrye Maven plugin configuration"
 	},
-	"Springdocs plugin": {
+	"Springdoc plugin": {
 		"prefix": "springdoc",
 		"body": [
 			"<plugin>",
@@ -81,6 +81,20 @@
 			"</plugin>$0"
 		],
 		"description": "Springdoc Maven plugin configuration"
+	},
+	"Spring Boot executions": {
+		"prefix": "executions",
+		"body": [
+			"<executions>",
+			"\t<execution>",
+			"\t\t<goals>",
+			"\t\t\t<goal>start</goal>",
+			"\t\t\t<goal>stop</goal>",
+			"\t\t</goals>",
+			"\t</execution>",
+			"</executions>$0"
+		],
+		"description": "Spring Boot Maven plugin executions configuration for integration tests"
 	},
 	"OpenAPI generator plugin": {
 		"prefix": "openapi-plugin",
@@ -139,7 +153,7 @@
 		],
 		"description": "OpenAPI generator Maven plugin configuration"
 	},
-	"Native built tool plugin": {
+	"Native build tool plugin": {
 		"prefix": "native-plugin",
 		"body": [
 			"<plugin>",

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-version=${KIND_VERSION:-v1.19.11}
+version=${KIND_VERSION:-v1.27.3}
 clusters=$(kind get clusters)
 reg_name='registry'
 reg_port='5000'

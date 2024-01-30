@@ -107,6 +107,9 @@
         "vs-kubernetes.ignore-recommendations": true
     },
     "git.openRepositoryInParentFolders": "never",
+    "githubPullRequests.pullBranch": "never",
+    "cmake.showOptionsMovedNotification": false,
+    "cmake.configureOnOpen": false,
     // "java.trace.server": "verbose",
     // "spring-boot.ls.logfile": "/tmp/spring-boot-ls-mustache-sample.log",
 }

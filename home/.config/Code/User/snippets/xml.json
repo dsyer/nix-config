@@ -1,4 +1,15 @@
 {
+	"Devtools": {
+		"prefix": "devtools",
+		"body": [
+			"<dependency>",
+			"\t<groupId>org.springframework.boot</groupId>",
+			"\t<artifactId>spring-boot-devtools</artifactId>",
+			"\t<scope>test</scope>",
+			"</dependency>$0"
+		],
+		"description": "Swagger annotations dependency"
+	},
 	"Swagger annotations": {
 		"prefix": "swagger-annotations",
 		"body": [

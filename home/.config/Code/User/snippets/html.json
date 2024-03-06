@@ -4,5 +4,10 @@
 		"body": ["<link rel=\"stylesheet\" type=\"text/css\" href=\"https://unpkg.com/bootstrap/dist/css/bootstrap.min.css\" />",
 				"\t<script src='https://unpkg.com/bootstrap/dist/js/bootstrap.min.js'></script>$0"],
 		"description": "Bootstrap CSS CDN"
+	},
+	"Htmx": {
+		"prefix": "htmx",
+		"body": ["<script src='https://unpkg.com/htmx.org/dist/htmx.min.js'></script>$0"],
+		"description": "HTMX from CDN"
 	}
 }

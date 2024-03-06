@@ -2,7 +2,6 @@ with (import <nixpkgs> { }); let
   localPackagePaths = (import ./packages.nix) pkgs;
   userPackagePaths = [
     dive
-    docker-compose
     docker-credential-gcr
     dos2unix
     envsubst

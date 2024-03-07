@@ -9,5 +9,10 @@
 		"prefix": "htmx",
 		"body": ["<script src='https://unpkg.com/htmx.org/dist/htmx.min.js'></script>$0"],
 		"description": "HTMX from CDN"
+	},
+	"Unpoly": {
+		"prefix": "unpoly",
+		"body": ["<script src='https://unpkg.com/unpoly/unpoly.min.js'></script>$0"],
+		"description": "Unpoly from CDN"
 	}
 }

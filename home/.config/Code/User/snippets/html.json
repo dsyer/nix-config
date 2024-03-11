@@ -14,5 +14,10 @@
 		"prefix": "unpoly",
 		"body": ["<script src='https://unpkg.com/unpoly/unpoly.min.js'></script>$0"],
 		"description": "Unpoly from CDN"
+	},
+	"Turbo": {
+		"prefix": "turbo",
+		"body": ["<script src='https://unpkg.com/@hotwired/turbo/dist/turbo.es2017-umd.js'></script>$0"],
+		"description": "Turbo from CDN"
 	}
 }

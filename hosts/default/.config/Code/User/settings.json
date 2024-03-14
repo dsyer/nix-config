@@ -38,6 +38,8 @@
     },
     "window.zoomLevel": 1,
     "java.server.launchMode": "Standard",
+    "java.compile.nullAnalysis.mode": "disabled",
+    "java.autobuild.enabled": true,
     "editor.stickyScroll.enabled": true,
     "[python]": {
         "editor.formatOnType": true

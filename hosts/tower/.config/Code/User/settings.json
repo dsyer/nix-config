@@ -6,7 +6,6 @@
     "java.configuration.checkProjectSettingsExclusions": false,
     "java.semanticHighlighting.enabled": true,
     "remote.SSH.configFile": "/home/dsyer/.ssh/config",
-    "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "java.project.importOnFirstTimeStartup": "automatic",
     "maven.executable.preferMavenWrapper": true,
@@ -110,6 +109,7 @@
     "githubPullRequests.pullBranch": "never",
     "cmake.showOptionsMovedNotification": false,
     "cmake.configureOnOpen": false,
+    "java.maven.downloadSources": true,
     // "java.trace.server": "verbose",
     // "spring-boot.ls.logfile": "/tmp/spring-boot-ls-mustache-sample.log",
 }

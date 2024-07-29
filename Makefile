@@ -29,8 +29,8 @@ install:
 	mkdir -p ~/.config/lxqt
 	mkdir -p ~/.local/share/applications
 	for f in $(shell ls ~/.nix-profile/share/applications/*); do ln -fs $$f ~/.local/share/applications/; done
-	LANG=C stow -v 2 -t ~ -S home
-	if [ -d "hosts/$(host)" ]; then cd hosts; LANG=C stow -v 2 -t ~ -S $(host); else cd hosts; LANG=C stow -v 2 -t ~ -S default; fi
+	LC_ALL=C stow -v 2 -t ~ -S home
+	if [ -d "hosts/$(host)" ]; then cd hosts; LC_ALL=C stow -v 2 -t ~ -S $(host); else cd hosts; LC_ALL=C stow -v 2 -t ~ -S default; fi
 
 clean-home:
 	rm -rf ~/.config/nixpkgs

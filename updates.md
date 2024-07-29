@@ -169,3 +169,7 @@ and the installed one was `nouveau` (the free one). Tried `ubuntu-drivers autoin
 ## Zoom
 
 Download the `.deb` package from zoom.us and attempt to install it with `dpkg -i ...`. It fails and you fix it with `sudo apt update --fix-missing; sudo apt install -f`. Then it might just work or you can install it again with `dpkg -i ...`.
+
+## Git
+
+The Nix user-packages above include the `hub` cli, so you can `git clone spring-projects/spring-framework` (for instance) and it will guess the protocol, based on whether you have write access or not. The first time you do it `hub` has to ask for Github credentials - use an empty username and a password which is the Personal Access Token from the Github UI. The credentials will be cached in `~/.config/hub` (so don't put that under source control).

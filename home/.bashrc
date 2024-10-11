@@ -121,10 +121,18 @@ if [ -d "$HOME/bin" ] ; then
 	PATH="$HOME/bin:$PATH"
 fi
 
-if which java >/dev/null 2>&1; then
-	export JAVA_HOME=$(dirname $(readlink -f `which java`) | sed -e 's,/bin$,,')
-fi
-
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 ! [ -d /etc/nixos ] && [[ -s "/home/dsyer/.sdkman/bin/sdkman-init.sh" && ! $(which sdkman-init.sh > /dev/null l 2>&1) ]] && source "/home/dsyer/.sdkman/bin/sdkman-init.sh"
 
+#BUT IF YOU WANT TO USE JAVA FROM NIX_SHELL YOU NEED THIS AS WELL!!!
+if [ ."$IN_NIX_SHELL" = ."" ]; then
+
+	if which java >/dev/null 2>&1; then
+		export JAVA_HOME=$(dirname $(readlink -f `which java`) | sed -e 's,/bin$,,')
+	fi
+
+else
+
+	unset JAVA_HOME
+
+fi

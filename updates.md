@@ -75,7 +75,13 @@ Log out and log back in to make sure the group is applied.
 
 ## Chrome Browser
 
-Installs fine from Nix, but the XDG (menu) doesn't show up without some manual intervention. So far I have been manually maintaining a file in `~/.local/share/applications`. Automation to follow.
+Installs fine from Nix, but the XDG (menu) doesn't show up without some manual intervention. So far I have been manually maintaining a file in `~/.local/share/applications`. Automation to follow. ON Ubuntu 24 you also have to [disable apparmor](https://github.com/NixOS/nixpkgs/issues/121694#issuecomment-2159420924):
+
+Disable this restriction using a persistent setting by adding a new file (`/etc/sysctl.d/60-apparmor-namespace.conf`) with the following contents:
+
+```
+kernel.apparmor_restrict_unprivileged_userns=0
+```
 
 ## Monitors
 

@@ -2,7 +2,7 @@
 
 key = `cat ~/.ssh/id_rsa.pub`
 user = ${USER}
-email = dsyer@vmware.com
+email = david.syer@broadcom.com
 name = "Dave Syer"
 host = $(shell hostname)
 
@@ -28,9 +28,9 @@ install:
 	mkdir -p ~/.config/Code/User
 	mkdir -p ~/.config/lxqt
 	mkdir -p ~/.local/share/applications
-	for f in $(shell ls ~/.nix-profile/share/applications/*); do ln -fs $$f ~/.local/share/applications/; done
-	LC_ALL=C stow -v 2 -t ~ -S home
-	if [ -d "hosts/$(host)" ]; then cd hosts; LC_ALL=C stow -v 2 -t ~ -S $(host); else cd hosts; LC_ALL=C stow -v 2 -t ~ -S default; fi
+	if [ -d ~/.nix-profile/share/applications/ ]; then for f in $(shell ls ~/.nix-profile/share/applications/*); do ln -fs $$f ~/.local/share/applications/; done; fi
+	LC_ALL=C stow --adopt -v 2 -t ~ -S home
+	if [ -d "hosts/$(host)" ]; then cd hosts; LC_ALL=C stow --adopt -v 2 -t ~ -S $(host); else cd hosts; LC_ALL=C stow --adopt -v 2 -t ~ -S default; fi
 
 clean-home:
 	rm -rf ~/.config/nixpkgs

@@ -3,7 +3,6 @@
 [profiles]
   [[default]]
     background_color = "#ffffdd"
-    cursor_color = "#aaaaaa"
     font = Monospace 12
     foreground_color = "#000000"
     scrollback_lines = 9999

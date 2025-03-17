@@ -2,11 +2,4 @@
 	email = dsyer@vmware.com
 	name = Dave Syer
 [core]
-	hooksPath = /home/dsyer/dev/git-hooks-core
-[filesystem "Oracle Corporation|11.0.2|/dev/nvme0n1p4"]
-	timestampResolution = 7000 nanoseconds
-	minRacyThreshold = 4857 microseconds
-[init]
-	defaultBranch = main
-[hub]
-	protocol = ssh
+	hooksPath=/home/dsyer/dev/git-hooks-core

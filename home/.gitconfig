@@ -3,3 +3,7 @@
 	name = Dave Syer
 [core]
 	hooksPath=/home/dsyer/dev/git-hooks-core
+[init]
+	defaultBranch = main
+[hub]
+	protocol = ssh

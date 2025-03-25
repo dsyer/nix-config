@@ -2,6 +2,10 @@
 x-scheme-handler/http=chrome.desktop;
 x-scheme-handler/https=chrome.desktop;
 [Default Applications]
-text/html=chrome.desktop;
+text/html=google-chrome.desktop
 x-scheme-handler/eclipse+command=_nix_store_knp0qf324d66fqlqzi6zymlpg4bif8ib-eclipse-platform-4.16_eclipse_.desktop
 x-scheme-handler/webcal=google-chrome.desktop
+x-scheme-handler/http=google-chrome.desktop
+x-scheme-handler/https=google-chrome.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop

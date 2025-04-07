@@ -131,7 +131,8 @@
         "https://json.schemastore.org/github-workflow": "/.github/workflows/**/*.yml"
     },
     "security.workspace.trust.untrustedFiles": "open",
-    "editor.inlineSuggest.suppressSuggestions": true
+    "editor.inlineSuggest.suppressSuggestions": true,
+    "diffEditor.ignoreTrimWhitespace": false
     // "java.trace.server": "verbose",
     // "spring-boot.ls.logfile": "/tmp/spring-boot-ls-mustache-sample.log",
 }

@@ -80,7 +80,7 @@
     },
     "[java]": {
         "editor.defaultFormatter": "redhat.java"
-    },
+	},
     "asls.traceLevel": "verbose",
     "npm.keybindingsChangedWarningShown": true,
     "[jsonc]": {
@@ -132,7 +132,6 @@
     },
     "security.workspace.trust.untrustedFiles": "open",
     "editor.inlineSuggest.suppressSuggestions": true,
-    "diffEditor.ignoreTrimWhitespace": false
-    // "java.trace.server": "verbose",
+	"diffEditor.ignoreTrimWhitespace": false
     // "spring-boot.ls.logfile": "/tmp/spring-boot-ls-mustache-sample.log",
 }

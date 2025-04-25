@@ -915,4 +915,4 @@ Then
 
 The username is the Windows local user and the password is how you log onto the windows box (probably Microsoft Live account):
 
-    .$ sudo mount -t cifs -o user=david,password="$(lpass show --password 8626486485653997789)",uid=$(id -u),gid=$(id -g) //alien/david /mnt/alien/
+    .$ sudo mount -t cifs -o user=david,password="$(lpass show --password 8626486485653997789)",uid=$(id -u),gid=$(id -g) //alien/Users/david /mnt/alien/

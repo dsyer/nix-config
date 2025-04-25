@@ -4,3 +4,4 @@
 *.iso
 result
 .vscode
+.venv

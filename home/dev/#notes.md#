@@ -931,4 +931,4 @@ Without the flags we get formatted output with offset addresses.
 The inverse (hex to bytes) is best done with `xxd`:
 
     $ printf '0a024869' | xxd -r -p | xxd
-    00000000: 0a02 4869                                ..Hi
+    00000000: 0a02 4869              ..Hi

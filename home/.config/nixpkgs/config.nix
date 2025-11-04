@@ -7,7 +7,7 @@ with (import <nixpkgs> { }); let
     envsubst
     file
     # (with google-cloud-sdk; withExtraComponents [components.gke-gcloud-auth-plugin])
-    gitAndTools.hub
+    hub
     gnumake
     jq
     kapp

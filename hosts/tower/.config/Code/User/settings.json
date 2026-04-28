@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Default Light+",
+    "workbench.colorTheme": "Light+",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "java.requirements.JDK11Warning": false,
@@ -148,5 +148,10 @@
     },
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
-    }
+    },
+    "java.diagnostic.filter": [
+        "**/target/**/*.java"
+    ],
+    "kotlin.languageServer.enabled": false,
+    "kotlin.debugAdapter.enabled": false
 }

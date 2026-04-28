@@ -71,6 +71,8 @@ Use `builder.command("sh", "-c", "echo bar && echo foo");` to run 2 commands in 
 
 # Zoom
 
+Install from Debian (Ubuntu) package, `sudo dpkg -i zoom_amd64.deb`.
+
 If you see this:
 
     $ /usr/bin/zoom 
@@ -88,6 +90,12 @@ If you see this:
 Then try this:
 
     $ LIBGL_ALWAYS_SOFTWARE=1 zoom
+	
+If Zoom won't open from a link in the browser use devtools (F12) to copy the join link, and then run
+
+        $ xdg-open '<link>'
+		
+(quoting to ensure shell doesn't expand special characters).
 
 # Drawing on the Screen
 

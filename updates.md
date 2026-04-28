@@ -144,7 +144,7 @@ Can be useful and it doesn't work well when installed from Nix - some packages a
 
 ## VSCode
 
-I install VSCode from Nix, but the extensions are installed by the app. Ones that I consider essential:
+I used to install VSCode from Nix, with the extensions are installed by the app. Now I use a package manager because Nix is too slow to keep up to date. Ones that I consider essential:
 
     ms-vscode-remote.vscode-remote-extensionpack
     vscjava.vscode-java-pack
